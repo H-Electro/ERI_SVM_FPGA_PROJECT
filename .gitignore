@@ -39,3 +39,7 @@
 
 # debug information files
 *.dwo
+# Office temporary / lock files
+~$*.pptx
+~$*.docx
+~$*.xlsx
