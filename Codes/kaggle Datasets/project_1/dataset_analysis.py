@@ -1,6 +1,7 @@
 # Phase 1: Find the Dataset (Done)
 # Phase 2: Set up your Python & ML environment 
 # Phase 3: Build a Machine Learning Model
+
 # Phase 4: Prepare for FPGA implementation
 # About Dataset reference (https://www.kaggle.com/datasets/adilshamim8/greenhouse-plant-growth-metrics)
 # The Advanced IoT Agriculture Dataset captures detailed physiological and morphological
@@ -8,6 +9,9 @@
 # at Tikrit University’s Agriculture Lab. Compiled by Mohammed Ismail Lifta (2023–2024)
 #  under the supervision of Prof. Wisam Dawood Abdullah, it comprises 30,000 records spanning 14 variables that quantify 
 # chlorophyll levels, growth rates, biomass (wet/dry weight), root metrics, and more, alongside a final categorical Class label.
+
+
+#Random Forest.
 
 import os
 import pandas as pd
