@@ -15,6 +15,8 @@ SCRIPT_ANALYSIS = dataset_analysis.py
 
 # New ML script (your smart farming model code)
 SCRIPT_ML = main.py
+SCRIPT_MODEL = model.py
+SCRIPT_TEST = test.py
 
 # Default target: keep old behavior
 all: env run
@@ -24,7 +26,7 @@ all: env run
 env:
 	python -m venv $(ENV_NAME)
 	$(ENV_NAME)/Scripts/python -m pip install --upgrade pip
-	$(ENV_NAME)/Scripts/pip install pandas numpy matplotlib seaborn scikit-learn kaggle tabulate
+	$(ENV_NAME)/Scripts/pip install pandas numpy matplotlib seaborn scikit-learn kaggle tabulate skl2onnx onnxruntime
 
 
 # Run the original dataset analysis (unchanged behavior)
@@ -34,6 +36,11 @@ run-data:
 # Run the smart farming ML code
 run:
 	$(ENV_NAME)/Scripts/python $(SCRIPT_ML)
+	$(ENV_NAME)/Scripts/python $(SCRIPT_MODEL)
+run_model:
+	$(ENV_NAME)/Scripts/python $(SCRIPT_MODEL)
+run_test:
+	$(ENV_NAME)/Scripts/python $(SCRIPT_TEST)
 
 # Clean virtual environment and logs
 clean:
