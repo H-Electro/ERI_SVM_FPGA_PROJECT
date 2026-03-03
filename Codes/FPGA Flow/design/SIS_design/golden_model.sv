@@ -1,6 +1,6 @@
 import shared_pkg::*;
 
-module golden_model (
+module golden_model_v1 (
     input  logic clk,
     input  logic rst,
 
@@ -19,7 +19,6 @@ module golden_model (
 
     output real yield
 );
-
     // ========================
     // Internal scaled signals
     // ========================
@@ -68,7 +67,7 @@ module golden_model (
     end
 
     // ========================
-    // Decision Tree
+    // Decision Tree (Updated)
     // ========================
     always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -76,14 +75,14 @@ module golden_model (
         end else begin
 
             if (gd <= -1.06) begin
-                if (crop_type <= 3)
+                if (crop_type <= 3.91)
                     yield_reg <= 3877.71;
                 else
                     yield_reg <= 3889.49;
 
             end else begin  // gd > -1.06
 
-                if (crop_type <= 3) begin
+                if (crop_type <= 3.81) begin
                     if (ph <= 1.24) begin
                         if (ndvi <= 0.32) begin
                             if (ph <= -0.48)
@@ -100,7 +99,7 @@ module golden_model (
                         yield_reg <= 4399.57;
                     end
 
-                end else begin  // crop_type > 3
+                end else begin  // crop_type > 3.81
                     if (ndvi <= -1.25)
                         yield_reg <= 3646.80;
                     else begin
@@ -120,4 +119,136 @@ module golden_model (
 
     assign yield = yield_reg;
 
+endmodule
+
+
+module golden_model_v2 (
+    input  wire        clk,
+    input  wire        rst,
+
+    input  real soil_moisture,
+    input  real soil_ph,
+    input  real temperature,
+    input  real rainfall,
+    input  real humidity,
+    input  real sunlight_hours,
+    input  real NDVI_index,
+    input  real growing_days,
+
+    input  real crop_type,  // Use real to match Python thresholds
+
+    output reg  [31:0] yield_int
+);
+ 
+    // ================= Mean and Std values (from Python StandardScaler) =================
+    real SM_MEAN   = 26.750;
+    real PH_MEAN   = 6.524;
+    real TMP_MEAN  = 24.676;
+    real RF_MEAN   = 181.686;
+    real HUM_MEAN  = 65.194;
+    real SUN_MEAN  = 7.030;
+    real NDVI_MEAN = 0.602;
+    real GD_MEAN   = 119.496;
+
+    real SM_STD    = 10.150;
+    real PH_STD    = 0.586;
+    real TMP_STD   = 5.349;
+    real RF_STD    = 72.293;
+    real HUM_STD   = 14.643;
+    real SUN_STD   = 1.692;
+    real NDVI_STD  = 0.175;
+    real GD_STD    = 16.798;
+
+    // ================= Decision tree thresholds (from Python scaled tree) =================
+    real GD_THRESH1   = -1.06;
+    real GD_THRESH2   = -0.10;
+    real PH_THRESH1   = 1.24;
+    real PH_THRESH2   = -0.48;
+    real NDVI_THRESH1 = 0.32;
+    real NDVI_THRESH2 = -1.25;
+    real SM_THRESH    = -0.08;
+    real SUN_THRESH   = -0.08;
+    real CROP1        = 3.91;
+    real CROP2        = 3.81;
+
+    // ================= Yield constants =================
+    real Y_3877 = 3877.71;
+    real Y_3889 = 3889.49;
+    real Y_4161 = 4161.82;
+    real Y_4142 = 4142.28;
+    real Y_4136 = 4136.84;
+    real Y_4010 = 4010.21;
+    real Y_4399 = 4399.57;
+    real Y_3646 = 3646.80;
+    real Y_4001 = 4001.40;
+    real Y_4203 = 4203.40;
+    real Y_3804 = 3804.23;
+
+    // ================= Normalized values =================
+    real sm_norm, ph_norm, temp_norm, rain_norm;
+    real hum_norm, sun_norm, ndvi_norm, gd_norm;
+    real yield_real;
+
+    // ================= FSM =================
+    parameter IDLE    = 2'b00;
+    parameter DECIDE  = 2'b01;
+    parameter CONVERT = 2'b10;
+    reg [1:0] state;
+
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            state      <= IDLE;
+            yield_int  <= 0;
+            yield_real <= 0.0;
+        end else begin
+            case (state)
+                IDLE: state <= DECIDE;
+
+                DECIDE: begin
+                    // ================= Normalization =================
+                    sm_norm   = (soil_moisture - SM_MEAN)   / SM_STD;
+                    ph_norm   = (soil_ph - PH_MEAN)         / PH_STD;
+                    temp_norm = (temperature - TMP_MEAN)   / TMP_STD;
+                    rain_norm = (rainfall - RF_MEAN)       / RF_STD;
+                    hum_norm  = (humidity - HUM_MEAN)      / HUM_STD;
+                    sun_norm  = (sunlight_hours - SUN_MEAN)/ SUN_STD;
+                    ndvi_norm = (NDVI_index - NDVI_MEAN)   / NDVI_STD;
+                    gd_norm   = (growing_days - GD_MEAN)   / GD_STD;
+
+                    // ================= Decision tree =================
+                    if (gd_norm <= GD_THRESH1) begin
+                        if (crop_type <= CROP1) yield_real = Y_3877;
+                        else                    yield_real = Y_3889;
+                    end else begin
+                        if (crop_type <= CROP2) begin
+                            if (ph_norm <= PH_THRESH1) begin
+                                if (ndvi_norm <= NDVI_THRESH1) begin
+                                    if (ph_norm <= PH_THRESH2) yield_real = Y_4161;
+                                    else                       yield_real = Y_4142;
+                                end else begin
+                                    if (sm_norm <= SM_THRESH) yield_real = Y_4136;
+                                    else                       yield_real = Y_4010;
+                                end
+                            end else yield_real = Y_4399;
+                        end else begin
+                            if (ndvi_norm <= NDVI_THRESH2) yield_real = Y_3646;
+                            else begin
+                                if (sun_norm <= SUN_THRESH)      yield_real = Y_4001;
+                                else if (gd_norm <= GD_THRESH2)  yield_real = Y_4203;
+                                else                             yield_real = Y_3804;
+                            end
+                        end
+                    end
+
+                    state <= CONVERT;
+                end
+
+                CONVERT: begin
+                    // ================= Assign final yield =================
+                    yield_int <= $rtoi(yield_real);
+                    state     <= IDLE;
+                end
+            endcase
+        end
+    end
 endmodule
