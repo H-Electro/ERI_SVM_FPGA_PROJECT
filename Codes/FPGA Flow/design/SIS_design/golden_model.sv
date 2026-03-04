@@ -51,7 +51,6 @@ module golden_model_v1 (
 
     parameter real GROWINGDAYS_MEAN   = 119.496;
     parameter real GROWINGDAYS_STD    = 16.798;
-
     // ========================
     // Feature scaling
     // ========================
@@ -65,7 +64,7 @@ module golden_model_v1 (
         ndvi = (NDVI_index    - NDVI_MEAN)         / NDVI_STD;
         gd   = (growing_days  - GROWINGDAYS_MEAN)  / GROWINGDAYS_STD;
     end
-
+  
     // ========================
     // Decision Tree (Updated)
     // ========================

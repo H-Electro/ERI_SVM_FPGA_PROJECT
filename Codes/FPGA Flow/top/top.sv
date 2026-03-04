@@ -89,7 +89,51 @@ module tb_top;
         run_row(6, 44.91, 32'h4233A3D7, 5.78, 32'h40B8F5C3, 24.87, 32'h41C6F5C3, 238.95, 32'h436EF333, 83.06, 32'h42A61EB8, 4.92, 32'h409D70A4, 0.82, 32'h3F51EB85, 114, 32'h42E40000, RICE, 4384, 4001);
         run_row(7, 36.28, 32'h42111EB8, 7.04, 32'h40E147AE, 21.80, 32'h41AE6666, 123.38, 32'h42F6C28F, 47.91, 32'h423FA3D7, 4.02, 32'h4080A3D7, 0.76, 32'h3F428F5C, 145, 32'h43110000, SOYBEAN, 4501, 4010);
         $display("-------------------------------------------------------------------------------------------------------------------------------------------------");
+        $display("-------------------------------------------------------------------------------------------");
+        $display("| Parameter | Golden Model | RTL Design | %% Error                                        ");
+        $display("-------------------------------------------------------------------------------------------");
 
+        $display("| sm        | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.sm_norm, 
+                $bitstoshortreal(dut.sm_norm),
+                100.0 * ($bitstoshortreal(dut.sm_norm) - golden_model_v2_inst.sm_norm)/golden_model_v2_inst.sm_norm);
+
+        $display("| ph        | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.ph_norm, 
+                $bitstoshortreal(dut.ph_norm),
+                100.0 * ($bitstoshortreal(dut.ph_norm) - golden_model_v2_inst.ph_norm)/golden_model_v2_inst.ph_norm);
+
+        $display("| temp      | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.temp_norm, 
+                $bitstoshortreal(dut.temp_norm),
+                100.0 * ($bitstoshortreal(dut.temp_norm) - golden_model_v2_inst.temp_norm)/golden_model_v2_inst.temp_norm);
+
+        $display("| rain      | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.rain_norm, 
+                $bitstoshortreal(dut.rain_norm),
+                100.0 * ($bitstoshortreal(dut.rain_norm) - golden_model_v2_inst.rain_norm)/golden_model_v2_inst.rain_norm);
+
+        $display("| hum       | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.hum_norm, 
+                $bitstoshortreal(dut.hum_norm),
+                100.0 * ($bitstoshortreal(dut.hum_norm) - golden_model_v2_inst.hum_norm)/golden_model_v2_inst.hum_norm);
+
+        $display("| sun       | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.sun_norm, 
+                $bitstoshortreal(dut.sun_norm),
+                100.0 * ($bitstoshortreal(dut.sun_norm) - golden_model_v2_inst.sun_norm)/golden_model_v2_inst.sun_norm);
+
+        $display("| ndvi      | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.ndvi_norm, 
+                $bitstoshortreal(dut.ndvi_norm),
+                100.0 * ($bitstoshortreal(dut.ndvi_norm) - golden_model_v2_inst.ndvi_norm)/golden_model_v2_inst.ndvi_norm);
+
+        $display("| gd        | %8.4f      | %8.4f     | %8.2f", 
+                golden_model_v2_inst.gd_norm, 
+                $bitstoshortreal(dut.gd_norm),
+                100.0 * ($bitstoshortreal(dut.gd_norm) - golden_model_v2_inst.gd_norm)/golden_model_v2_inst.gd_norm);
+
+        $display("-------------------------------------------------------------------------------------------");
         $stop;
     end
 
