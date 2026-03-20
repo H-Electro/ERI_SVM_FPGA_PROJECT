@@ -76,7 +76,7 @@ The dataset contains environmental variables affecting crop growth and is used t
 
 # Machine Learning Tools and Libraries
 
-The ML pipeline is implemented in Python using `pandas` for preprocessing and `numpy` for numerical operations.
+The ML pipeline is implemented in Python using `pandas` for preprocessing and `numpy` for numerical operations. A Decision Tree model from `scikit-learn` (sklearn) is also used for training and prediction.
 
 ---
 
