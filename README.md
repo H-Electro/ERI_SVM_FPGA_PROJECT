@@ -40,7 +40,9 @@ This enables predictive algorithms to run as hardware accelerators in FPGA/ASIC 
 
 ### System Design
 
-![System Design](https://github.com/user-attachments/assets/1372e96c-1b36-4d2a-abc4-a540f6f3a8d6)
+<p align="center">
+  <img src="Docs/Assets/SystemDesign.png" alt="System Design" width="900">
+</p>
 
 # AMBA APB4 Integration
 
@@ -59,7 +61,9 @@ APB4 allows:
 
 ### Proposed Architecture
 
-![Hardware/Software Co-Design Architecture](https://github.com/user-attachments/assets/c63e34ea-4a04-452a-98eb-e12c37487990)
+<p align="center">
+  <img src="Docs/Assets/arch.png" alt="Hardware/Software Co-Design Architecture" width="244">
+</p>
 
 ---
 
@@ -113,13 +117,17 @@ Decision nodes are mapped to comparators, control logic, and arithmetic operatio
 
 ### Example Decision Tree Output
 
-![Decision Tree Output](https://github.com/user-attachments/assets/94c58519-abb5-4529-87a9-09a4f00cdf86)
+<p align="center">
+  <img src="Docs/Assets/tree.png" alt="Decision Tree Output" width="900">
+</p>
 
 ---
 
 # Verification Methodology
 
-![UVM Verification Architecture](https://github.com/user-attachments/assets/c0b88bec-68ad-4c72-9654-dfee19f32078)
+<p align="center">
+  <img src="Docs/Assets/uvm.png" alt="UVM Verification Architecture" width="430">
+</p>
 
 The hardware design is verified using a SystemVerilog UVM environment. The current setup uses 1 active agent and 2 passive agents to check that hardware predictions stay aligned with the software reference.
 
@@ -170,7 +178,9 @@ run.bat
 
 ### FPGA Flow Overview
 
-![FPGA Flow](https://github.com/user-attachments/assets/c4a9b63b-ff8a-476a-9a91-bdd33d0d1851)
+<p align="center">
+  <img src="Docs/Assets/fpga_flow.png" alt="FPGA Flow" width="420">
+</p>
 
 ---
 
