@@ -191,6 +191,7 @@ Project
 |
 +-- Docs
 |   `-- Assets
+|   `-- Papers
 |   `-- presentations and documentation
 |
 `-- Codes
