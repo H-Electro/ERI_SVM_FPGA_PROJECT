@@ -1,56 +1,48 @@
-`ifndef CYP_SEQ_ITEM_SVH
-`define CYP_SEQ_ITEM_SVH
+`ifndef CYP_WRAPPER_SEQ_ITEM_SVH
+`define CYP_WRAPPER_SEQ_ITEM_SVH
 
     class cyp_seq_item extends uvm_sequence_item;
-    
-        // RTL Design Signals
-        //inputs
+
         logic        rst;
 
         logic [63:0] N;
         logic [63:0] P;
         logic [63:0] K;
-        logic [63:0] Soil_pH;
-        logic [63:0] Soil_Moisture;
-        logic [63:0] Organic_Carbon;
-        logic [63:0] Temperature;
-        logic [63:0] Rainfall;
-        logic [63:0] Sunlight_Hours;
-        logic [63:0] Wind_Speed;
-        logic [63:0] Crop_Type;
-        logic [63:0] Fertilizer_Used;
-        logic [63:0] Altitude;
-        logic [63:0] Region;
-        logic [63:0] Humidity;
-        logic [63:0] Irrigation_Type;
-        logic [63:0] Season;
-        logic [63:0] Pesticide_Used;
-        logic [63:0] Soil_Type;
+        logic [63:0] soil_ph;
+        logic [63:0] soil_moisture;
+        logic [63:0] organic_carbon;
+        logic [63:0] temperature;
+        logic [63:0] rainfall;
+        logic [63:0] sunlight_hours;
+        logic [63:0] wind_speed;
+        logic [63:0] crop_type;
+        logic [63:0] fertilizer_used;
+        logic [63:0] altitude;
+        logic [63:0] region;
+        logic [63:0] humidity;
+        logic [63:0] irrigation_type;
+        logic [63:0] season;
+        logic [63:0] pesticide_used;
+        logic [63:0] soil_type;
 
-        //outputs
-        logic [63:0] Yield_Int;
+        logic [63:0] yield_int;
         logic        ready;
-        
-        // Golden Model Signals
+
         logic [63:0] actual_yield;
         logic [63:0] predicted_yield;
 
-
-        // Default Constructor
         function new(string name = "cyp_seq_item");
             super.new(name);
         endfunction : new
 
         `uvm_object_utils_begin(cyp_seq_item)
-            // `uvm_field_int(X, UVM_DEFAULT)
-            // Golden Model
-            // `uvm_field_int(X, UVM_DEFAULT)
         `uvm_object_utils_end
 
         constraint c_preset_distribution {
             rst dist { `LOW := 97, `HIGH := 3 };
         }
-        
+
     endclass : cyp_seq_item
 
-`endif // CYP_SEQ_ITEM_SVH
+`endif // CYP_WRAPPER_SEQ_ITEM_SVH
+

@@ -1,119 +1,116 @@
-`ifndef CYP_MAIN_SEQUENCE_SVH
-`define CYP_MAIN_SEQUENCE_SVH
+`ifndef CYP_WRAPPER_MAIN_SEQUENCE_SVH
+`define CYP_WRAPPER_MAIN_SEQUENCE_SVH
 
 class cyp_main_sequence extends uvm_sequence#(cyp_seq_item);
 
     `uvm_object_utils(cyp_main_sequence)
 
-    // --- 1. File handles ---
-    int fp_Altitude, fp_Crop_Type, fp_Fertilizer_Used, fp_Humidity, fp_Irrigation_Type;
-    int fp_K, fp_N, fp_Organic_Carbon, fp_P, fp_Pesticide_Used;
-    int fp_Rainfall, fp_Region, fp_Season, fp_Soil_Moisture, fp_Soil_pH;
-    int fp_Soil_Type, fp_Sunlight_Hours, fp_Temperature, fp_Wind_Speed;
+    int fp_altitude, fp_crop_type, fp_fertilizer_used, fp_humidity, fp_irrigation_type;
+    int fp_K, fp_N, fp_organic_carbon, fp_P, fp_pesticide_used;
+    int fp_rainfall, fp_region, fp_season, fp_soil_moisture, fp_soil_ph;
+    int fp_soil_type, fp_sunlight_hours, fp_temperature, fp_wind_speed;
 
-    // --- 2. Percentage of rows to use ---
     int PERCENTAGE;
 
-    // Constructor
     function new(string name = "cyp_main_sequence", uvm_component parent = null, int percent = 100);
         super.new(name);
         PERCENTAGE = percent;
     endfunction : new
 
-    // --- Main task ---
     task body;
         string line;
         int total_lines = 0;
         int cycles_to_run;
         int i;
+        int line_ok;
+        int scan_ok;
         cyp_seq_item seq_item;
 
-        // --- 3. Open all input files ---
-        fp_Altitude         = $fopen("design/cyp_design/hex_outputs/Altitude.hex","r");
-        fp_Crop_Type        = $fopen("design/cyp_design/hex_outputs/Crop_Type.hex","r");
-        fp_Fertilizer_Used  = $fopen("design/cyp_design/hex_outputs/Fertilizer_Used.hex","r");
-        fp_Humidity         = $fopen("design/cyp_design/hex_outputs/Humidity.hex","r");
-        fp_Irrigation_Type  = $fopen("design/cyp_design/hex_outputs/Irrigation_Type.hex","r");
+        fp_altitude         = $fopen("design/cyp_design/hex_outputs/altitude.hex","r");
+        fp_crop_type        = $fopen("design/cyp_design/hex_outputs/crop_type.hex","r");
+        fp_fertilizer_used  = $fopen("design/cyp_design/hex_outputs/fertilizer_used.hex","r");
+        fp_humidity         = $fopen("design/cyp_design/hex_outputs/humidity.hex","r");
+        fp_irrigation_type  = $fopen("design/cyp_design/hex_outputs/irrigation_type.hex","r");
         fp_K                = $fopen("design/cyp_design/hex_outputs/K.hex","r");
         fp_N                = $fopen("design/cyp_design/hex_outputs/N.hex","r");
-        fp_Organic_Carbon   = $fopen("design/cyp_design/hex_outputs/Organic_Carbon.hex","r");
+        fp_organic_carbon   = $fopen("design/cyp_design/hex_outputs/organic_carbon.hex","r");
         fp_P                = $fopen("design/cyp_design/hex_outputs/P.hex","r");
-        fp_Pesticide_Used   = $fopen("design/cyp_design/hex_outputs/Pesticide_Used.hex","r");
-        fp_Rainfall         = $fopen("design/cyp_design/hex_outputs/Rainfall.hex","r");
-        fp_Region           = $fopen("design/cyp_design/hex_outputs/Region.hex","r");
-        fp_Season           = $fopen("design/cyp_design/hex_outputs/Season.hex","r");
-        fp_Soil_Moisture    = $fopen("design/cyp_design/hex_outputs/Soil_Moisture.hex","r");
-        fp_Soil_pH          = $fopen("design/cyp_design/hex_outputs/Soil_pH.hex","r");
-        fp_Soil_Type        = $fopen("design/cyp_design/hex_outputs/Soil_Type.hex","r");
-        fp_Sunlight_Hours   = $fopen("design/cyp_design/hex_outputs/Sunlight_Hours.hex","r");
-        fp_Temperature      = $fopen("design/cyp_design/hex_outputs/Temperature.hex","r");
-        fp_Wind_Speed       = $fopen("design/cyp_design/hex_outputs/Wind_Speed.hex","r");
+        fp_pesticide_used   = $fopen("design/cyp_design/hex_outputs/pesticide_used.hex","r");
+        fp_rainfall         = $fopen("design/cyp_design/hex_outputs/rainfall.hex","r");
+        fp_region           = $fopen("design/cyp_design/hex_outputs/region.hex","r");
+        fp_season           = $fopen("design/cyp_design/hex_outputs/season.hex","r");
+        fp_soil_moisture    = $fopen("design/cyp_design/hex_outputs/soil_moisture.hex","r");
+        fp_soil_ph          = $fopen("design/cyp_design/hex_outputs/soil_ph.hex","r");
+        fp_soil_type        = $fopen("design/cyp_design/hex_outputs/soil_type.hex","r");
+        fp_sunlight_hours   = $fopen("design/cyp_design/hex_outputs/sunlight_hours.hex","r");
+        fp_temperature      = $fopen("design/cyp_design/hex_outputs/temperature.hex","r");
+        fp_wind_speed       = $fopen("design/cyp_design/hex_outputs/wind_speed.hex","r");
 
-        // --- 4. Count total lines in Altitude file ---
-        while (!$feof(fp_Altitude)) begin
-            $fgets(line, fp_Altitude);
-            total_lines++;
+        while (!$feof(fp_altitude)) begin
+            line_ok = $fgets(line, fp_altitude);
+            if (line_ok != 0)
+                total_lines++;
         end
         cycles_to_run = (total_lines * PERCENTAGE) / 100;
+        if ((total_lines > 0) && (cycles_to_run == 0) && (PERCENTAGE > 0))
+            cycles_to_run = 1;
 
-        // --- 5. Rewind all files ---
-        $fclose(fp_Altitude);         fp_Altitude        = $fopen("design/cyp_design/hex_outputs/Altitude.hex","r");
-        $fclose(fp_Crop_Type);        fp_Crop_Type       = $fopen("design/cyp_design/hex_outputs/Crop_Type.hex","r");
-        $fclose(fp_Fertilizer_Used);  fp_Fertilizer_Used = $fopen("design/cyp_design/hex_outputs/Fertilizer_Used.hex","r");
-        $fclose(fp_Humidity);         fp_Humidity        = $fopen("design/cyp_design/hex_outputs/Humidity.hex","r");
-        $fclose(fp_Irrigation_Type);  fp_Irrigation_Type = $fopen("design/cyp_design/hex_outputs/Irrigation_Type.hex","r");
+        $fclose(fp_altitude);         fp_altitude        = $fopen("design/cyp_design/hex_outputs/altitude.hex","r");
+        $fclose(fp_crop_type);        fp_crop_type       = $fopen("design/cyp_design/hex_outputs/crop_type.hex","r");
+        $fclose(fp_fertilizer_used);  fp_fertilizer_used = $fopen("design/cyp_design/hex_outputs/fertilizer_used.hex","r");
+        $fclose(fp_humidity);         fp_humidity        = $fopen("design/cyp_design/hex_outputs/humidity.hex","r");
+        $fclose(fp_irrigation_type);  fp_irrigation_type = $fopen("design/cyp_design/hex_outputs/irrigation_type.hex","r");
         $fclose(fp_K);                fp_K               = $fopen("design/cyp_design/hex_outputs/K.hex","r");
         $fclose(fp_N);                fp_N               = $fopen("design/cyp_design/hex_outputs/N.hex","r");
-        $fclose(fp_Organic_Carbon);   fp_Organic_Carbon  = $fopen("design/cyp_design/hex_outputs/Organic_Carbon.hex","r");
+        $fclose(fp_organic_carbon);   fp_organic_carbon  = $fopen("design/cyp_design/hex_outputs/organic_carbon.hex","r");
         $fclose(fp_P);                fp_P               = $fopen("design/cyp_design/hex_outputs/P.hex","r");
-        $fclose(fp_Pesticide_Used);   fp_Pesticide_Used  = $fopen("design/cyp_design/hex_outputs/Pesticide_Used.hex","r");
-        $fclose(fp_Rainfall);         fp_Rainfall        = $fopen("design/cyp_design/hex_outputs/Rainfall.hex","r");
-        $fclose(fp_Region);           fp_Region          = $fopen("design/cyp_design/hex_outputs/Region.hex","r");
-        $fclose(fp_Season);           fp_Season          = $fopen("design/cyp_design/hex_outputs/Season.hex","r");
-        $fclose(fp_Soil_Moisture);    fp_Soil_Moisture   = $fopen("design/cyp_design/hex_outputs/Soil_Moisture.hex","r");
-        $fclose(fp_Soil_pH);          fp_Soil_pH         = $fopen("design/cyp_design/hex_outputs/Soil_pH.hex","r");
-        $fclose(fp_Soil_Type);        fp_Soil_Type       = $fopen("design/cyp_design/hex_outputs/Soil_Type.hex","r");
-        $fclose(fp_Sunlight_Hours);   fp_Sunlight_Hours  = $fopen("design/cyp_design/hex_outputs/Sunlight_Hours.hex","r");
-        $fclose(fp_Temperature);      fp_Temperature     = $fopen("design/cyp_design/hex_outputs/Temperature.hex","r");
-        $fclose(fp_Wind_Speed);       fp_Wind_Speed      = $fopen("design/cyp_design/hex_outputs/Wind_Speed.hex","r");
+        $fclose(fp_pesticide_used);   fp_pesticide_used  = $fopen("design/cyp_design/hex_outputs/pesticide_used.hex","r");
+        $fclose(fp_rainfall);         fp_rainfall        = $fopen("design/cyp_design/hex_outputs/rainfall.hex","r");
+        $fclose(fp_region);           fp_region          = $fopen("design/cyp_design/hex_outputs/region.hex","r");
+        $fclose(fp_season);           fp_season          = $fopen("design/cyp_design/hex_outputs/season.hex","r");
+        $fclose(fp_soil_moisture);    fp_soil_moisture   = $fopen("design/cyp_design/hex_outputs/soil_moisture.hex","r");
+        $fclose(fp_soil_ph);          fp_soil_ph         = $fopen("design/cyp_design/hex_outputs/soil_ph.hex","r");
+        $fclose(fp_soil_type);        fp_soil_type       = $fopen("design/cyp_design/hex_outputs/soil_type.hex","r");
+        $fclose(fp_sunlight_hours);   fp_sunlight_hours  = $fopen("design/cyp_design/hex_outputs/sunlight_hours.hex","r");
+        $fclose(fp_temperature);      fp_temperature     = $fopen("design/cyp_design/hex_outputs/temperature.hex","r");
+        $fclose(fp_wind_speed);       fp_wind_speed      = $fopen("design/cyp_design/hex_outputs/wind_speed.hex","r");
 
-        // --- 6. Run only the desired percentage of cycles ---
         for (i = 0; i < cycles_to_run; i++) begin
             seq_item = cyp_seq_item::type_id::create("seq_item");
 
-            $fgets(line, fp_Altitude);         $sscanf(line, "%h", seq_item.Altitude);
-            $fgets(line, fp_Crop_Type);        $sscanf(line, "%h", seq_item.Crop_Type);
-            $fgets(line, fp_Fertilizer_Used);  $sscanf(line, "%h", seq_item.Fertilizer_Used);
-            $fgets(line, fp_Humidity);         $sscanf(line, "%h", seq_item.Humidity);
-            $fgets(line, fp_Irrigation_Type);  $sscanf(line, "%h", seq_item.Irrigation_Type);
-            $fgets(line, fp_K);                $sscanf(line, "%h", seq_item.K);
-            $fgets(line, fp_N);                $sscanf(line, "%h", seq_item.N);
-            $fgets(line, fp_Organic_Carbon);   $sscanf(line, "%h", seq_item.Organic_Carbon);
-            $fgets(line, fp_P);                $sscanf(line, "%h", seq_item.P);
-            $fgets(line, fp_Pesticide_Used);   $sscanf(line, "%h", seq_item.Pesticide_Used);
-            $fgets(line, fp_Rainfall);         $sscanf(line, "%h", seq_item.Rainfall);
-            $fgets(line, fp_Region);           $sscanf(line, "%h", seq_item.Region);
-            $fgets(line, fp_Season);           $sscanf(line, "%h", seq_item.Season);
-            $fgets(line, fp_Soil_Moisture);    $sscanf(line, "%h", seq_item.Soil_Moisture);
-            $fgets(line, fp_Soil_pH);          $sscanf(line, "%h", seq_item.Soil_pH);
-            $fgets(line, fp_Soil_Type);        $sscanf(line, "%h", seq_item.Soil_Type);
-            $fgets(line, fp_Sunlight_Hours);   $sscanf(line, "%h", seq_item.Sunlight_Hours);
-            $fgets(line, fp_Temperature);      $sscanf(line, "%h", seq_item.Temperature);
-            $fgets(line, fp_Wind_Speed);       $sscanf(line, "%h", seq_item.Wind_Speed);
+            seq_item.rst = 1'b0;
+            line_ok = $fgets(line, fp_altitude);         scan_ok = $sscanf(line, "%h", seq_item.altitude);
+            line_ok = $fgets(line, fp_crop_type);        scan_ok = $sscanf(line, "%h", seq_item.crop_type);
+            line_ok = $fgets(line, fp_fertilizer_used);  scan_ok = $sscanf(line, "%h", seq_item.fertilizer_used);
+            line_ok = $fgets(line, fp_humidity);         scan_ok = $sscanf(line, "%h", seq_item.humidity);
+            line_ok = $fgets(line, fp_irrigation_type);  scan_ok = $sscanf(line, "%h", seq_item.irrigation_type);
+            line_ok = $fgets(line, fp_K);                scan_ok = $sscanf(line, "%h", seq_item.K);
+            line_ok = $fgets(line, fp_N);                scan_ok = $sscanf(line, "%h", seq_item.N);
+            line_ok = $fgets(line, fp_organic_carbon);   scan_ok = $sscanf(line, "%h", seq_item.organic_carbon);
+            line_ok = $fgets(line, fp_P);                scan_ok = $sscanf(line, "%h", seq_item.P);
+            line_ok = $fgets(line, fp_pesticide_used);   scan_ok = $sscanf(line, "%h", seq_item.pesticide_used);
+            line_ok = $fgets(line, fp_rainfall);         scan_ok = $sscanf(line, "%h", seq_item.rainfall);
+            line_ok = $fgets(line, fp_region);           scan_ok = $sscanf(line, "%h", seq_item.region);
+            line_ok = $fgets(line, fp_season);           scan_ok = $sscanf(line, "%h", seq_item.season);
+            line_ok = $fgets(line, fp_soil_moisture);    scan_ok = $sscanf(line, "%h", seq_item.soil_moisture);
+            line_ok = $fgets(line, fp_soil_ph);          scan_ok = $sscanf(line, "%h", seq_item.soil_ph);
+            line_ok = $fgets(line, fp_soil_type);        scan_ok = $sscanf(line, "%h", seq_item.soil_type);
+            line_ok = $fgets(line, fp_sunlight_hours);   scan_ok = $sscanf(line, "%h", seq_item.sunlight_hours);
+            line_ok = $fgets(line, fp_temperature);      scan_ok = $sscanf(line, "%h", seq_item.temperature);
+            line_ok = $fgets(line, fp_wind_speed);       scan_ok = $sscanf(line, "%h", seq_item.wind_speed);
 
             start_item(seq_item);
             finish_item(seq_item);
         end
 
-        // --- 7. Close all files ---
-        $fclose(fp_Altitude);         $fclose(fp_Crop_Type);        $fclose(fp_Fertilizer_Used);  $fclose(fp_Humidity);
-        $fclose(fp_Irrigation_Type);  $fclose(fp_K);                $fclose(fp_N);                $fclose(fp_Organic_Carbon);
-        $fclose(fp_P);                $fclose(fp_Pesticide_Used);   $fclose(fp_Rainfall);         $fclose(fp_Region);
-        $fclose(fp_Season);           $fclose(fp_Soil_Moisture);    $fclose(fp_Soil_pH);          $fclose(fp_Soil_Type);
-        $fclose(fp_Sunlight_Hours);   $fclose(fp_Temperature);      $fclose(fp_Wind_Speed);
+        $fclose(fp_altitude);         $fclose(fp_crop_type);        $fclose(fp_fertilizer_used);  $fclose(fp_humidity);
+        $fclose(fp_irrigation_type);  $fclose(fp_K);                $fclose(fp_N);                $fclose(fp_organic_carbon);
+        $fclose(fp_P);                $fclose(fp_pesticide_used);   $fclose(fp_rainfall);         $fclose(fp_region);
+        $fclose(fp_season);           $fclose(fp_soil_moisture);    $fclose(fp_soil_ph);          $fclose(fp_soil_type);
+        $fclose(fp_sunlight_hours);   $fclose(fp_temperature);      $fclose(fp_wind_speed);
 
     endtask : body
 
 endclass : cyp_main_sequence
 
-`endif // CYP_MAIN_SEQUENCE_SVH
+`endif // CYP_WRAPPER_MAIN_SEQUENCE_SVH

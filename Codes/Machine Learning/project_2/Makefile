@@ -14,10 +14,10 @@ ENV_NAME = venv
 SCRIPT_ANALYSIS = dataset_analysis.py
 
 # New ML script (your smart farming model code)
-SCRIPT_ML = main_m4.py
+SCRIPT_ML = main_m4_sub_models.py
 SCRIPT_MODEL = model.py
 SCRIPT_GMODEL = golden_model_noscale.py
-SCRIPT_TEST = run_generated_tree_from_file_m4.py
+SCRIPT_TEST = main_m4_aio.py
 SCRIPT_ENCODE = encode_crop_type.py
 
 # Default target: keep old behavior

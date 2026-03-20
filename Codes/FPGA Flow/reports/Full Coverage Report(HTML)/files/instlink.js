@@ -1,0 +1,2 @@
+var g_data = {"15":[14,"master_if",1],"16":[14,"slave_if",1],"17":[14,"cyp_if",1],"19":[18,"Master",1],"20":[18,"Slave",1],"21":[18,"Core",1],"18":[14,"u_dut",1],"14":[-1,"tb_top",1],"24":[-1,"cyp_wrapper_env_pkg",1],"83":[-1,"cyp_wrapper_test_pkg",1]};
+processInstLinks(g_data);

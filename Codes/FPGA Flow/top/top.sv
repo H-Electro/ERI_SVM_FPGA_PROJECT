@@ -1,87 +1,81 @@
-import uvm_pkg::*;
-import cyp_env_pkg::*;
-import cyp_test_pkg::*;
-import shared_pkg::*; // For enums and parameters
+`include "cyp_defines.svh"
 `timescale `TIME_UNIT / `TIME_PRECISION
 
 module tb_top;
-    bit clk;
-    // Clock Generation
+    import uvm_pkg::*;
+    import cyp_wrapper_env_pkg::*;
+    import cyp_wrapper_test_pkg::*;
+    import shared_wrapper_pkg::*;
+
+    bit pclk;
+
     initial begin
-        clk = `LOW;
-        forever #(`CLK_PERIOD/2) clk = ~ clk;
+        pclk = `LOW;
+        forever #(`CLK_PERIOD/2) pclk = ~ pclk;
     end
 
-    
-    cyp_env env_instance; // Instantiate the CYP4 enviroment
-    cyp_test_base test; // Instantiate the CYP4 test
+    cyp_apb_master_if master_if (pclk);
+    cyp_apb_slave_if  slave_if  (pclk);
+    cyp_core_if       cyp_if    (pclk);
 
-    // Instantiate the interface
-    CYP_if cyp_if (clk);
-
-    crop_yield_predictor u_dut (
-        .clk(clk),
-        .rst(cyp_if.rst),
-
-        .N(cyp_if.N),
-        .P(cyp_if.P),
-        .K(cyp_if.K),
-        .Soil_pH(cyp_if.Soil_pH),
-        .Soil_Moisture(cyp_if.Soil_Moisture),
-        .Organic_Carbon(cyp_if.Organic_Carbon),
-        .Temperature(cyp_if.Temperature),
-        .Rainfall(cyp_if.Rainfall),
-        .Sunlight_Hours(cyp_if.Sunlight_Hours),
-        .Wind_Speed(cyp_if.Wind_Speed),
-        .Crop_Type(cyp_if.Crop_Type),
-        .Fertilizer_Used(cyp_if.Fertilizer_Used),
-        .Altitude(cyp_if.Altitude),
-        .Region(cyp_if.Region),
-        .Humidity(cyp_if.Humidity),
-        .Irrigation_Type(cyp_if.Irrigation_Type),
-        .Season(cyp_if.Season),
-        .Pesticide_Used(cyp_if.Pesticide_Used),
-        .Soil_Type(cyp_if.Soil_Type),
-
-        .Yield_Int(cyp_if.Yield_Int),
-        .ready(cyp_if.ready)
+    apb_wrapper u_dut (
+        .pclk(pclk),
+        .presetn(master_if.presetn),
+        .swrite(master_if.swrite),
+        .saddr(master_if.saddr),
+        .swdata(master_if.swdata),
+        .sstrb(master_if.sstrb),
+        .sprot(master_if.sprot),
+        .transfer(master_if.transfer),
+        .prdata(master_if.prdata),
+        .pready(master_if.pready),
+        .pslverr(master_if.pslverr)
     );
-    
 
-    // // Binding the cyp_sva module (SystemVerilog Assertions) to the dut instance
-    // bind crop_yield_predictor cyp_sva CYP_sva_inst (
-    //     .clk(clk),
-    //     .rst(rst),
+    assign slave_if.psel       = u_dut.psel;
+    assign slave_if.penable    = u_dut.penable;
+    assign slave_if.pwrite     = u_dut.pwrite;
+    assign slave_if.paddr      = u_dut.paddr;
+    assign slave_if.pwdata     = u_dut.pwdata;
+    assign slave_if.pstrb      = u_dut.pstrb;
+    assign slave_if.pprot      = u_dut.pprot;
+    assign slave_if.prdata     = u_dut.prdata;
+    assign slave_if.pready     = u_dut.pready;
+    assign slave_if.pslverr    = u_dut.pslverr;
+    assign slave_if.core_rst_n = u_dut.core_rst_n;
 
-    //     .N(N),
-    //     .P(P),
-    //     .K(K),
-    //     .Soil_pH(Soil_pH),
-    //     .Soil_Moisture(Soil_Moisture),
-    //     .Organic_Carbon(Organic_Carbon),
-    //     .Temperature(Temperature),
-    //     .Rainfall(Rainfall),
-    //     .Sunlight_Hours(Sunlight_Hours),
-    //     .Wind_Speed(Wind_Speed),
-    //     .Crop_Type(Crop_Type),
-    //     .Fertilizer_Used(Fertilizer_Used),
-    //     .Altitude(Altitude),
-    //     .Region(Region),
-    //     .Humidity(Humidity),
-    //     .Irrigation_Type(Irrigation_Type),
-    //     .Season(Season),
-    //     .Pesticide_Used(Pesticide_Used),
-    //     .Soil_Type(Soil_Type),
-
-    //     .Yield_Int(Yield_Int),
-    //     .ready(ready)
-    // );
+    assign cyp_if.rst_n           = master_if.presetn & u_dut.core_rst_n;
+    assign cyp_if.N               = u_dut.n;
+    assign cyp_if.P               = u_dut.p;
+    assign cyp_if.K               = u_dut.k;
+    assign cyp_if.soil_ph         = u_dut.soil_ph;
+    assign cyp_if.soil_moisture   = u_dut.soil_moisture;
+    assign cyp_if.organic_carbon  = u_dut.organic_carbon;
+    assign cyp_if.temperature     = u_dut.temperature;
+    assign cyp_if.rainfall        = u_dut.rainfall;
+    assign cyp_if.sunlight_hours  = u_dut.sunlight_hours;
+    assign cyp_if.wind_speed      = u_dut.wind_speed;
+    assign cyp_if.crop_type       = u_dut.crop_type;
+    assign cyp_if.fertilizer_used = u_dut.fertilizer_used;
+    assign cyp_if.altitude        = u_dut.altitude;
+    assign cyp_if.region          = u_dut.region;
+    assign cyp_if.humidity        = u_dut.humidity;
+    assign cyp_if.irrigation_type = u_dut.irrigation_type;
+    assign cyp_if.season          = u_dut.season;
+    assign cyp_if.pesticide_used  = u_dut.pesticide_used;
+    assign cyp_if.soil_type       = u_dut.soil_type;
+    assign cyp_if.yield_int       = u_dut.yield_int;
+    assign cyp_if.ready           = u_dut.core_ready;
 
     initial begin
-        uvm_top.set_report_verbosity_level(UVM_MEDIUM); // Set verbosity level
-        uvm_top.finish_on_completion = `DISABLE_FINISH; // Prevent UVM from calling $finish
-        uvm_config_db#(virtual CYP_if)::set(null, "*", "cyp_if", cyp_if); // Set CYP interface globally
-        run_test("cyp_test_base"); // Start the UVM test
-        $stop; // Stop simulation after test execution
+        uvm_top.set_report_verbosity_level(UVM_MEDIUM);
+        // uvm_top.finish_on_completion = `DISABLE_FINISH;
+        uvm_config_db#(int)::set(null, "", "recording_detail", 0);
+        uvm_config_db#(uvm_bitstream_t)::set(null, "", "recording_detail", 0);
+        uvm_config_db#(virtual cyp_apb_master_if)::set(null, "*", "master_if", master_if);
+        uvm_config_db#(virtual cyp_apb_slave_if)::set(null, "*", "slave_if", slave_if);
+        uvm_config_db#(virtual cyp_core_if)::set(null, "*", "cyp_if", cyp_if);
+        run_test("cyp_wrapper_test_base");
+        $stop;
     end
 endmodule : tb_top
