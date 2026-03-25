@@ -1,3 +1,7 @@
+# This implementation is based on the Cellular Network Handover Prediction Dataset,
+# which contains real-world LTE measurements used to model and predict handover events.
+# Dataset source:
+# https://www.kaggle.com/datasets/meruvakodandasuraj/cellular-network-handover-prediction-dataset
 import sys
 import warnings
 from pathlib import Path
