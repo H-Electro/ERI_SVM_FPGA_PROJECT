@@ -1,0 +1,42 @@
+HANDOVER PREDICTION REPORT
+============================================================
+Dataset file: datasets/cellular_handover_dataset.csv
+Total samples: 10570
+Handover samples: 535
+Non-handover samples: 10035
+Handover ratio: 0.0506
+
+Cross-validation results
+Accuracy : 0.872848  [good]
+F1-score : 0.381215  [weak]
+ROC-AUC  : 0.894389  [good]
+MSE      : 0.103923  [fair]
+R2       : -1.162673  [weak]
+
+Result interpretation
+- Accuracy shows overall prediction correctness across all samples.
+- F1-score is important here because handover events are less frequent than non-handover events.
+- ROC-AUC measures how well the model separates handover from non-handover behavior.
+- MSE and R2 are computed from predicted probabilities, giving an additional view of score quality.
+
+Benefits of these results
+- Better handover prediction can support earlier cell-switch preparation.
+- Earlier preparation can reduce call drops and service interruption.
+- Network teams can use the results to identify weak-signal and unstable mobility zones.
+- Feature importance helps explain which radio measurements influence decisions most.
+- The model is lightweight enough to be useful for real-time telecom and hardware-oriented workflows.
+
+Generated outputs
+- Predictions CSV: outputs\predictions.csv
+- Log report: outputs\report.log
+- Figures folder: figures
+
+Classification report
+precision    recall  f1-score   support
+
+           0       0.99      0.88      0.93     10035
+           1       0.25      0.77      0.38       535
+
+    accuracy                           0.87     10570
+   macro avg       0.62      0.83      0.66     10570
+weighted avg       0.95      0.87      0.90     10570
