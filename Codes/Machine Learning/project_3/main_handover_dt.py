@@ -32,7 +32,7 @@ DATA_FILE = "datasets/cellular_handover_dataset.csv"
 FIG_DIR = Path("figures")
 OUT_DIR = Path("outputs")
 LOG_FILE = OUT_DIR / "report.log"
-ANALYSIS_FILE = "analysis_report.md"
+ANALYSIS_FILE = "README.md"
 
 RANDOM_STATE = 42
 N_SPLITS = 5
