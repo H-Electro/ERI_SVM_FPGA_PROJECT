@@ -1,2 +1,0 @@
-var g_data = {"name":"objects/cyp_config.svh","src":"`ifndef CYP_WRAPPER_CONFIG_SVH\n`define CYP_WRAPPER_CONFIG_SVH\n\n    class cyp_config extends uvm_object;\n\n        `uvm_object_utils (cyp_config)\n        virtual cyp_core_if cyp_if;\n        uvm_active_passive_enum is_active;\n\n        function new(string name = \"cyp_config\");\n            super.new(name);\n        endfunction : new\n\n    endclass : cyp_config\n\n`endif // CYP_WRAPPER_CONFIG_SVH\n\n","lang":"verilog"};
-processSrcData(g_data);

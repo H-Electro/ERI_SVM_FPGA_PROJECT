@@ -1,2 +1,0 @@
-var g_data = {"name":"top/test/test.sv","src":"package cyp_wrapper_test_pkg;\n\n    import  uvm_pkg::*;\n    import  shared_wrapper_pkg::*;\n    import  cyp_wrapper_env_pkg::*;\n    `include \"cyp_defines.svh\"\n    `include \"apb_defines.svh\"\n    `include \"uvm_macros.svh\"\n\n    `include \"top/test/cyp_test_base.svh\"\n\nendpackage : cyp_wrapper_test_pkg\n","lang":"verilog"};
-processSrcData(g_data);
