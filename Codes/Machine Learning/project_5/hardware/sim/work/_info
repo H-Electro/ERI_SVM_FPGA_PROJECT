@@ -1,0 +1,84 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+!s11f vlog 2021.1 2021.01, Jan 19 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dD:/All/Ali/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/sim
+T_opt
+!s110 1775327957
+Vg1Hj7CAnc>nMT<cBRlhdF1
+Z2 04 20 4 work tb_random_forest_seq fast 0
+=1-18c04dd6b470-69d15ad5-2a1-9bd0
+Z3 !s124 OEM100
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 tCvgOpt 0
+n@_opt
+Z6 OL;O;2021.1;73
+R1
+T_opt1
+!s110 1775330991
+V0de=VISozh5?_SCTV[B6N2
+R2
+=1-18c04dd6b470-69d166af-15a-9df8
+R3
+R4
+R5
+n@_opt1
+R6
+vrandom_forest_seq
+Z7 !s110 1775330990
+!i10b 1
+!s100 F0K=URF]`c50FF?^XCoP43
+I??GIFbXB=Ydfh5RPZgeM:0
+Z8 dD:/All/Ali/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/sim
+Z9 w1775330727
+8../rtl/random_forest_seq.v
+F../rtl/random_forest_seq.v
+!i122 4
+L0 4 161
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+Z11 OL;L;2021.1;73
+r1
+!s85 0
+31
+Z12 !s108 1775330990.000000
+Z13 !s107 generated/config_auto.vh|../tb/tb_random_forest_seq.sv|../rtl/random_forest_seq.v|
+Z14 !s90 -f|list.f|-mfcu|+cover|-covercells|
+!i113 0
+Z15 !s102 +cover -covercells
+Z16 o-mfcu +cover -covercells -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R5
+vtb_random_forest_seq
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+R7
+!i10b 1
+!s100 T]X042`zQ`D2ZQKAiNQ@U1
+IN5KoT<TX]VOFD5fKAamXI3
+S1
+R8
+R9
+8../tb/tb_random_forest_seq.sv
+F../tb/tb_random_forest_seq.sv
+!i122 4
+L0 4 134
+R10
+R11
+r1
+!s85 0
+31
+R12
+R13
+R14
+!i113 0
+R15
+R16
+R5

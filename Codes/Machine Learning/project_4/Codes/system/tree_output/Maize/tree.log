@@ -1,0 +1,91 @@
+|--- Fertilizer_Used <= 192.35
+|   |--- Rainfall <= 1173.45
+|   |   |--- Fertilizer_Used <= 130.15
+|   |   |   |--- Soil_Moisture <= 39.90
+|   |   |   |   |--- Temperature <= 13.01
+|   |   |   |   |   |--- value: [8.76]
+|   |   |   |   |--- Temperature >  13.01
+|   |   |   |   |   |--- value: [7.28]
+|   |   |   |--- Soil_Moisture >  39.90
+|   |   |   |   |--- Humidity <= 84.60
+|   |   |   |   |   |--- value: [8.29]
+|   |   |   |   |--- Humidity >  84.60
+|   |   |   |   |   |--- value: [9.58]
+|   |   |--- Fertilizer_Used >  130.15
+|   |   |   |--- K <= 141.00
+|   |   |   |   |--- Soil_Moisture <= 38.56
+|   |   |   |   |   |--- value: [8.32]
+|   |   |   |   |--- Soil_Moisture >  38.56
+|   |   |   |   |   |--- value: [9.04]
+|   |   |   |--- K >  141.00
+|   |   |   |   |--- value: [10.06]
+|   |--- Rainfall >  1173.45
+|   |   |--- Rainfall <= 2229.69
+|   |   |   |--- N <= 138.50
+|   |   |   |   |--- K <= 101.50
+|   |   |   |   |   |--- value: [9.02]
+|   |   |   |   |--- K >  101.50
+|   |   |   |   |   |--- value: [9.66]
+|   |   |   |--- N >  138.50
+|   |   |   |   |--- Humidity <= 36.51
+|   |   |   |   |   |--- value: [8.20]
+|   |   |   |   |--- Humidity >  36.51
+|   |   |   |   |   |--- value: [10.12]
+|   |   |--- Rainfall >  2229.69
+|   |   |   |--- Fertilizer_Used <= 122.66
+|   |   |   |   |--- Soil_Moisture <= 24.62
+|   |   |   |   |   |--- value: [8.88]
+|   |   |   |   |--- Soil_Moisture >  24.62
+|   |   |   |   |   |--- value: [9.92]
+|   |   |   |--- Fertilizer_Used >  122.66
+|   |   |   |   |--- Soil_pH <= 7.89
+|   |   |   |   |   |--- value: [10.83]
+|   |   |   |   |--- Soil_pH >  7.89
+|   |   |   |   |   |--- value: [7.98]
+|--- Fertilizer_Used >  192.35
+|   |--- Rainfall <= 1543.99
+|   |   |--- Soil_Moisture <= 40.90
+|   |   |   |--- Fertilizer_Used <= 270.36
+|   |   |   |   |--- Soil_Moisture <= 22.70
+|   |   |   |   |   |--- value: [8.32]
+|   |   |   |   |--- Soil_Moisture >  22.70
+|   |   |   |   |   |--- value: [9.39]
+|   |   |   |--- Fertilizer_Used >  270.36
+|   |   |   |   |--- Temperature <= 20.81
+|   |   |   |   |   |--- value: [9.33]
+|   |   |   |   |--- Temperature >  20.81
+|   |   |   |   |   |--- value: [10.43]
+|   |   |--- Soil_Moisture >  40.90
+|   |   |   |--- Fertilizer_Used <= 310.64
+|   |   |   |   |--- Rainfall <= 1086.36
+|   |   |   |   |   |--- value: [10.02]
+|   |   |   |   |--- Rainfall >  1086.36
+|   |   |   |   |   |--- value: [10.80]
+|   |   |   |--- Fertilizer_Used >  310.64
+|   |   |   |   |--- Rainfall <= 900.24
+|   |   |   |   |   |--- value: [10.96]
+|   |   |   |   |--- Rainfall >  900.24
+|   |   |   |   |   |--- value: [12.18]
+|   |--- Rainfall >  1543.99
+|   |   |--- Soil_Moisture <= 53.39
+|   |   |   |--- Fertilizer_Used <= 305.41
+|   |   |   |   |--- Rainfall <= 2342.63
+|   |   |   |   |   |--- value: [10.49]
+|   |   |   |   |--- Rainfall >  2342.63
+|   |   |   |   |   |--- value: [11.46]
+|   |   |   |--- Fertilizer_Used >  305.41
+|   |   |   |   |--- Rainfall <= 2115.11
+|   |   |   |   |   |--- value: [11.44]
+|   |   |   |   |--- Rainfall >  2115.11
+|   |   |   |   |   |--- value: [12.24]
+|   |   |--- Soil_Moisture >  53.39
+|   |   |   |--- Fertilizer_Used <= 233.66
+|   |   |   |   |--- Rainfall <= 2227.21
+|   |   |   |   |   |--- value: [10.77]
+|   |   |   |   |--- Rainfall >  2227.21
+|   |   |   |   |   |--- value: [12.06]
+|   |   |   |--- Fertilizer_Used >  233.66
+|   |   |   |   |--- N <= 111.50
+|   |   |   |   |   |--- value: [12.06]
+|   |   |   |   |--- N >  111.50
+|   |   |   |   |   |--- value: [12.99]

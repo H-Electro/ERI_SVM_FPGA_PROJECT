@@ -1,0 +1,242 @@
+2026-04-04 21:28:29,752 - INFO - ========== Random Forest Training Started ==========
+2026-04-04 21:28:29,752 - INFO - Dataset path: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\data\raw\crop-yield.csv
+2026-04-04 21:28:29,753 - INFO - Model output directory: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models
+2026-04-04 21:28:29,753 - INFO - Figure output directory: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures
+2026-04-04 21:28:29,753 - INFO - Scale option: 2 | Test size: 0.2 | Random state: 42
+2026-04-04 21:28:29,791 - INFO - Dataset loaded successfully with shape: (10000, 20)
+2026-04-04 21:28:29,792 - INFO - Found 6 crop types: ['Maize', 'Potato', 'Rice', 'Sugarcane', 'Wheat', 'Cotton']
+2026-04-04 21:28:29,793 - INFO - --------------------------------------------------
+2026-04-04 21:28:29,793 - INFO - Processing crop: Maize
+2026-04-04 21:28:29,795 - INFO - Crop subset shape for Maize: (1658, 20)
+2026-04-04 21:28:29,797 - INFO - Features for Maize: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:29,797 - INFO - Categorical columns for Maize: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:29,799 - INFO - Encoded column 'Soil_Type' for crop Maize
+2026-04-04 21:28:29,801 - INFO - Encoded column 'Region' for crop Maize
+2026-04-04 21:28:29,802 - INFO - Encoded column 'Season' for crop Maize
+2026-04-04 21:28:29,803 - INFO - Encoded column 'Irrigation_Type' for crop Maize
+2026-04-04 21:28:29,803 - INFO - No scaling applied for crop: Maize
+2026-04-04 21:28:29,804 - INFO - Train/test split for Maize | X_train: (1326, 18) | X_test: (332, 18) | y_train: (1326,) | y_test: (332,)
+2026-04-04 21:28:29,805 - INFO - Training parameters for Maize: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 8, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:29,858 - INFO - Model training completed for crop: Maize
+2026-04-04 21:28:29,879 - INFO - Metrics | R2: 0.5217 | MAE: 0.9649 | RMSE: 1.2164 | MAPE: 9.93%
+2026-04-04 21:28:29,886 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Maize
+2026-04-04 21:28:29,907 - INFO - Feature importance for Maize:
+2026-04-04 21:28:29,907 - INFO - Fertilizer_Used: 0.352209
+2026-04-04 21:28:29,908 - INFO - Rainfall: 0.233128
+2026-04-04 21:28:29,908 - INFO - Soil_Moisture: 0.104980
+2026-04-04 21:28:29,908 - INFO - Soil_pH: 0.039977
+2026-04-04 21:28:29,908 - INFO - N: 0.038231
+2026-04-04 21:28:29,908 - INFO - Wind_Speed: 0.035726
+2026-04-04 21:28:29,908 - INFO - K: 0.029534
+2026-04-04 21:28:29,908 - INFO - Humidity: 0.022236
+2026-04-04 21:28:29,908 - INFO - Pesticide_Used: 0.021549
+2026-04-04 21:28:29,908 - INFO - Temperature: 0.021334
+2026-04-04 21:28:29,908 - INFO - Altitude: 0.019939
+2026-04-04 21:28:29,908 - INFO - Sunlight_Hours: 0.019839
+2026-04-04 21:28:29,908 - INFO - P: 0.019767
+2026-04-04 21:28:29,908 - INFO - Organic_Carbon: 0.015937
+2026-04-04 21:28:29,908 - INFO - Region: 0.008425
+2026-04-04 21:28:29,908 - INFO - Soil_Type: 0.007084
+2026-04-04 21:28:29,908 - INFO - Irrigation_Type: 0.005984
+2026-04-04 21:28:29,908 - INFO - Season: 0.004121
+2026-04-04 21:28:30,575 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Maize\residuals.png
+2026-04-04 21:28:31,252 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Maize\feature_importance.png
+2026-04-04 21:28:31,893 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Maize\actual_vs_predicted.png
+2026-04-04 21:28:32,434 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Maize\error_vs_Rainfall.png
+2026-04-04 21:28:32,434 - INFO - Finished processing crop: Maize
+2026-04-04 21:28:32,434 - INFO - --------------------------------------------------
+2026-04-04 21:28:32,434 - INFO - Processing crop: Potato
+2026-04-04 21:28:32,437 - INFO - Crop subset shape for Potato: (1670, 20)
+2026-04-04 21:28:32,438 - INFO - Features for Potato: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:32,438 - INFO - Categorical columns for Potato: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:32,439 - INFO - Encoded column 'Soil_Type' for crop Potato
+2026-04-04 21:28:32,440 - INFO - Encoded column 'Region' for crop Potato
+2026-04-04 21:28:32,441 - INFO - Encoded column 'Season' for crop Potato
+2026-04-04 21:28:32,442 - INFO - Encoded column 'Irrigation_Type' for crop Potato
+2026-04-04 21:28:32,442 - INFO - No scaling applied for crop: Potato
+2026-04-04 21:28:32,444 - INFO - Train/test split for Potato | X_train: (1336, 18) | X_test: (334, 18) | y_train: (1336,) | y_test: (334,)
+2026-04-04 21:28:32,444 - INFO - Training parameters for Potato: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 8, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:32,508 - INFO - Model training completed for crop: Potato
+2026-04-04 21:28:32,533 - INFO - Metrics | R2: 0.4876 | MAE: 0.9662 | RMSE: 1.2154 | MAPE: 3.93%
+2026-04-04 21:28:32,540 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Potato
+2026-04-04 21:28:32,563 - INFO - Feature importance for Potato:
+2026-04-04 21:28:32,563 - INFO - Fertilizer_Used: 0.287713
+2026-04-04 21:28:32,563 - INFO - Rainfall: 0.225313
+2026-04-04 21:28:32,563 - INFO - Soil_Moisture: 0.115974
+2026-04-04 21:28:32,563 - INFO - Soil_pH: 0.054998
+2026-04-04 21:28:32,564 - INFO - Wind_Speed: 0.052950
+2026-04-04 21:28:32,564 - INFO - K: 0.041383
+2026-04-04 21:28:32,564 - INFO - N: 0.039103
+2026-04-04 21:28:32,564 - INFO - P: 0.026335
+2026-04-04 21:28:32,564 - INFO - Humidity: 0.026140
+2026-04-04 21:28:32,564 - INFO - Organic_Carbon: 0.024180
+2026-04-04 21:28:32,564 - INFO - Sunlight_Hours: 0.021238
+2026-04-04 21:28:32,564 - INFO - Altitude: 0.020902
+2026-04-04 21:28:32,564 - INFO - Temperature: 0.020856
+2026-04-04 21:28:32,564 - INFO - Pesticide_Used: 0.018445
+2026-04-04 21:28:32,564 - INFO - Soil_Type: 0.007626
+2026-04-04 21:28:32,564 - INFO - Season: 0.007453
+2026-04-04 21:28:32,564 - INFO - Region: 0.004733
+2026-04-04 21:28:32,564 - INFO - Irrigation_Type: 0.004658
+2026-04-04 21:28:33,182 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Potato\residuals.png
+2026-04-04 21:28:33,797 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Potato\feature_importance.png
+2026-04-04 21:28:34,261 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Potato\actual_vs_predicted.png
+2026-04-04 21:28:34,796 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Potato\error_vs_Rainfall.png
+2026-04-04 21:28:34,796 - INFO - Finished processing crop: Potato
+2026-04-04 21:28:34,796 - INFO - --------------------------------------------------
+2026-04-04 21:28:34,796 - INFO - Processing crop: Rice
+2026-04-04 21:28:34,798 - INFO - Crop subset shape for Rice: (1702, 20)
+2026-04-04 21:28:34,799 - INFO - Features for Rice: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:34,800 - INFO - Categorical columns for Rice: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:34,801 - INFO - Encoded column 'Soil_Type' for crop Rice
+2026-04-04 21:28:34,802 - INFO - Encoded column 'Region' for crop Rice
+2026-04-04 21:28:34,803 - INFO - Encoded column 'Season' for crop Rice
+2026-04-04 21:28:34,804 - INFO - Encoded column 'Irrigation_Type' for crop Rice
+2026-04-04 21:28:34,804 - INFO - No scaling applied for crop: Rice
+2026-04-04 21:28:34,806 - INFO - Train/test split for Rice | X_train: (1361, 18) | X_test: (341, 18) | y_train: (1361,) | y_test: (341,)
+2026-04-04 21:28:34,806 - INFO - Training parameters for Rice: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 10, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:34,869 - INFO - Model training completed for crop: Rice
+2026-04-04 21:28:34,890 - INFO - Metrics | R2: 0.4877 | MAE: 0.9584 | RMSE: 1.1980 | MAPE: 10.79%
+2026-04-04 21:28:34,896 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Rice
+2026-04-04 21:28:34,918 - INFO - Feature importance for Rice:
+2026-04-04 21:28:34,918 - INFO - Fertilizer_Used: 0.337117
+2026-04-04 21:28:34,918 - INFO - Rainfall: 0.198764
+2026-04-04 21:28:34,918 - INFO - Soil_Moisture: 0.083740
+2026-04-04 21:28:34,918 - INFO - K: 0.048941
+2026-04-04 21:28:34,918 - INFO - Soil_pH: 0.048830
+2026-04-04 21:28:34,918 - INFO - N: 0.040333
+2026-04-04 21:28:34,919 - INFO - Wind_Speed: 0.039805
+2026-04-04 21:28:34,919 - INFO - P: 0.031593
+2026-04-04 21:28:34,919 - INFO - Pesticide_Used: 0.027344
+2026-04-04 21:28:34,919 - INFO - Organic_Carbon: 0.024597
+2026-04-04 21:28:34,919 - INFO - Altitude: 0.022784
+2026-04-04 21:28:34,919 - INFO - Temperature: 0.021990
+2026-04-04 21:28:34,919 - INFO - Humidity: 0.020825
+2026-04-04 21:28:34,919 - INFO - Sunlight_Hours: 0.020550
+2026-04-04 21:28:34,919 - INFO - Irrigation_Type: 0.009657
+2026-04-04 21:28:34,919 - INFO - Region: 0.009136
+2026-04-04 21:28:34,919 - INFO - Soil_Type: 0.008343
+2026-04-04 21:28:34,919 - INFO - Season: 0.005651
+2026-04-04 21:28:35,505 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Rice\residuals.png
+2026-04-04 21:28:36,426 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Rice\feature_importance.png
+2026-04-04 21:28:37,102 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Rice\actual_vs_predicted.png
+2026-04-04 21:28:37,738 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Rice\error_vs_Rainfall.png
+2026-04-04 21:28:37,739 - INFO - Finished processing crop: Rice
+2026-04-04 21:28:37,739 - INFO - --------------------------------------------------
+2026-04-04 21:28:37,739 - INFO - Processing crop: Sugarcane
+2026-04-04 21:28:37,742 - INFO - Crop subset shape for Sugarcane: (1633, 20)
+2026-04-04 21:28:37,743 - INFO - Features for Sugarcane: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:37,744 - INFO - Categorical columns for Sugarcane: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:37,746 - INFO - Encoded column 'Soil_Type' for crop Sugarcane
+2026-04-04 21:28:37,747 - INFO - Encoded column 'Region' for crop Sugarcane
+2026-04-04 21:28:37,749 - INFO - Encoded column 'Season' for crop Sugarcane
+2026-04-04 21:28:37,750 - INFO - Encoded column 'Irrigation_Type' for crop Sugarcane
+2026-04-04 21:28:37,751 - INFO - No scaling applied for crop: Sugarcane
+2026-04-04 21:28:37,753 - INFO - Train/test split for Sugarcane | X_train: (1306, 18) | X_test: (327, 18) | y_train: (1306,) | y_test: (327,)
+2026-04-04 21:28:37,753 - INFO - Training parameters for Sugarcane: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 8, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:37,843 - INFO - Model training completed for crop: Sugarcane
+2026-04-04 21:28:37,867 - INFO - Metrics | R2: 0.4571 | MAE: 0.9622 | RMSE: 1.2417 | MAPE: 1.29%
+2026-04-04 21:28:37,873 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Sugarcane
+2026-04-04 21:28:37,901 - INFO - Feature importance for Sugarcane:
+2026-04-04 21:28:37,901 - INFO - Fertilizer_Used: 0.301147
+2026-04-04 21:28:37,901 - INFO - Rainfall: 0.214712
+2026-04-04 21:28:37,901 - INFO - Soil_Moisture: 0.110198
+2026-04-04 21:28:37,901 - INFO - Soil_pH: 0.077255
+2026-04-04 21:28:37,902 - INFO - Wind_Speed: 0.059957
+2026-04-04 21:28:37,902 - INFO - N: 0.039829
+2026-04-04 21:28:37,902 - INFO - K: 0.038994
+2026-04-04 21:28:37,902 - INFO - Pesticide_Used: 0.023957
+2026-04-04 21:28:37,902 - INFO - Altitude: 0.021411
+2026-04-04 21:28:37,902 - INFO - Organic_Carbon: 0.020871
+2026-04-04 21:28:37,902 - INFO - Humidity: 0.020699
+2026-04-04 21:28:37,902 - INFO - P: 0.017104
+2026-04-04 21:28:37,902 - INFO - Temperature: 0.015680
+2026-04-04 21:28:37,902 - INFO - Sunlight_Hours: 0.014519
+2026-04-04 21:28:37,902 - INFO - Irrigation_Type: 0.007003
+2026-04-04 21:28:37,903 - INFO - Region: 0.006746
+2026-04-04 21:28:37,903 - INFO - Soil_Type: 0.006549
+2026-04-04 21:28:37,903 - INFO - Season: 0.003370
+2026-04-04 21:28:38,851 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Sugarcane\residuals.png
+2026-04-04 21:28:39,497 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Sugarcane\feature_importance.png
+2026-04-04 21:28:39,963 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Sugarcane\actual_vs_predicted.png
+2026-04-04 21:28:40,472 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Sugarcane\error_vs_Rainfall.png
+2026-04-04 21:28:40,472 - INFO - Finished processing crop: Sugarcane
+2026-04-04 21:28:40,472 - INFO - --------------------------------------------------
+2026-04-04 21:28:40,472 - INFO - Processing crop: Wheat
+2026-04-04 21:28:40,475 - INFO - Crop subset shape for Wheat: (1671, 20)
+2026-04-04 21:28:40,476 - INFO - Features for Wheat: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:40,477 - INFO - Categorical columns for Wheat: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:40,478 - INFO - Encoded column 'Soil_Type' for crop Wheat
+2026-04-04 21:28:40,479 - INFO - Encoded column 'Region' for crop Wheat
+2026-04-04 21:28:40,480 - INFO - Encoded column 'Season' for crop Wheat
+2026-04-04 21:28:40,482 - INFO - Encoded column 'Irrigation_Type' for crop Wheat
+2026-04-04 21:28:40,482 - INFO - No scaling applied for crop: Wheat
+2026-04-04 21:28:40,484 - INFO - Train/test split for Wheat | X_train: (1336, 18) | X_test: (335, 18) | y_train: (1336,) | y_test: (335,)
+2026-04-04 21:28:40,484 - INFO - Training parameters for Wheat: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 8, 'min_samples_split': 10, 'min_samples_leaf': 2, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:40,538 - INFO - Model training completed for crop: Wheat
+2026-04-04 21:28:40,560 - INFO - Metrics | R2: 0.5096 | MAE: 0.9230 | RMSE: 1.1598 | MAPE: 11.22%
+2026-04-04 21:28:40,566 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Wheat
+2026-04-04 21:28:40,588 - INFO - Feature importance for Wheat:
+2026-04-04 21:28:40,588 - INFO - Fertilizer_Used: 0.312721
+2026-04-04 21:28:40,588 - INFO - Rainfall: 0.195792
+2026-04-04 21:28:40,588 - INFO - Soil_Moisture: 0.119173
+2026-04-04 21:28:40,589 - INFO - Soil_pH: 0.056362
+2026-04-04 21:28:40,589 - INFO - Wind_Speed: 0.047897
+2026-04-04 21:28:40,589 - INFO - K: 0.041877
+2026-04-04 21:28:40,589 - INFO - N: 0.039393
+2026-04-04 21:28:40,589 - INFO - Organic_Carbon: 0.027237
+2026-04-04 21:28:40,589 - INFO - Temperature: 0.025444
+2026-04-04 21:28:40,589 - INFO - Pesticide_Used: 0.024305
+2026-04-04 21:28:40,589 - INFO - Humidity: 0.023763
+2026-04-04 21:28:40,589 - INFO - Sunlight_Hours: 0.021460
+2026-04-04 21:28:40,589 - INFO - P: 0.019927
+2026-04-04 21:28:40,589 - INFO - Altitude: 0.018306
+2026-04-04 21:28:40,589 - INFO - Region: 0.008328
+2026-04-04 21:28:40,589 - INFO - Irrigation_Type: 0.007542
+2026-04-04 21:28:40,589 - INFO - Soil_Type: 0.005490
+2026-04-04 21:28:40,589 - INFO - Season: 0.004980
+2026-04-04 21:28:41,083 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Wheat\residuals.png
+2026-04-04 21:28:41,824 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Wheat\feature_importance.png
+2026-04-04 21:28:42,287 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Wheat\actual_vs_predicted.png
+2026-04-04 21:28:42,777 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Wheat\error_vs_Rainfall.png
+2026-04-04 21:28:42,777 - INFO - Finished processing crop: Wheat
+2026-04-04 21:28:42,777 - INFO - --------------------------------------------------
+2026-04-04 21:28:42,777 - INFO - Processing crop: Cotton
+2026-04-04 21:28:42,780 - INFO - Crop subset shape for Cotton: (1666, 20)
+2026-04-04 21:28:42,781 - INFO - Features for Cotton: ['N', 'P', 'K', 'Soil_pH', 'Soil_Moisture', 'Soil_Type', 'Organic_Carbon', 'Temperature', 'Humidity', 'Rainfall', 'Sunlight_Hours', 'Wind_Speed', 'Region', 'Altitude', 'Season', 'Irrigation_Type', 'Fertilizer_Used', 'Pesticide_Used']
+2026-04-04 21:28:42,781 - INFO - Categorical columns for Cotton: ['Soil_Type', 'Region', 'Season', 'Irrigation_Type']
+2026-04-04 21:28:42,782 - INFO - Encoded column 'Soil_Type' for crop Cotton
+2026-04-04 21:28:42,783 - INFO - Encoded column 'Region' for crop Cotton
+2026-04-04 21:28:42,784 - INFO - Encoded column 'Season' for crop Cotton
+2026-04-04 21:28:42,785 - INFO - Encoded column 'Irrigation_Type' for crop Cotton
+2026-04-04 21:28:42,785 - INFO - No scaling applied for crop: Cotton
+2026-04-04 21:28:42,787 - INFO - Train/test split for Cotton | X_train: (1332, 18) | X_test: (334, 18) | y_train: (1332,) | y_test: (334,)
+2026-04-04 21:28:42,788 - INFO - Training parameters for Cotton: {'random_state': 42, 'n_jobs': -1, 'n_estimators': 16, 'max_depth': 8, 'min_samples_split': 10, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'bootstrap': True}
+2026-04-04 21:28:42,843 - INFO - Model training completed for crop: Cotton
+2026-04-04 21:28:42,867 - INFO - Metrics | R2: 0.5040 | MAE: 0.9754 | RMSE: 1.1980 | MAPE: 15.04%
+2026-04-04 21:28:42,873 - INFO - Saved model artifacts in: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\models\rf_models\Cotton
+2026-04-04 21:28:42,897 - INFO - Feature importance for Cotton:
+2026-04-04 21:28:42,898 - INFO - Fertilizer_Used: 0.286368
+2026-04-04 21:28:42,898 - INFO - Rainfall: 0.250579
+2026-04-04 21:28:42,898 - INFO - Soil_Moisture: 0.089435
+2026-04-04 21:28:42,898 - INFO - Wind_Speed: 0.065258
+2026-04-04 21:28:42,898 - INFO - Soil_pH: 0.057404
+2026-04-04 21:28:42,898 - INFO - K: 0.040596
+2026-04-04 21:28:42,898 - INFO - N: 0.036601
+2026-04-04 21:28:42,898 - INFO - Altitude: 0.028372
+2026-04-04 21:28:42,898 - INFO - P: 0.026590
+2026-04-04 21:28:42,898 - INFO - Temperature: 0.024953
+2026-04-04 21:28:42,898 - INFO - Humidity: 0.019891
+2026-04-04 21:28:42,898 - INFO - Pesticide_Used: 0.018910
+2026-04-04 21:28:42,898 - INFO - Sunlight_Hours: 0.016896
+2026-04-04 21:28:42,898 - INFO - Organic_Carbon: 0.015014
+2026-04-04 21:28:42,898 - INFO - Irrigation_Type: 0.008101
+2026-04-04 21:28:42,898 - INFO - Soil_Type: 0.006825
+2026-04-04 21:28:42,898 - INFO - Season: 0.004580
+2026-04-04 21:28:42,899 - INFO - Region: 0.003627
+2026-04-04 21:28:43,570 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Cotton\residuals.png
+2026-04-04 21:28:44,268 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Cotton\feature_importance.png
+2026-04-04 21:28:44,878 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Cotton\actual_vs_predicted.png
+2026-04-04 21:28:45,416 - INFO - Saved figure: D:\All\Ali\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Machine Learning\project_5\artifacts\figures\Cotton\error_vs_Rainfall.png
+2026-04-04 21:28:45,416 - INFO - Finished processing crop: Cotton
+2026-04-04 21:28:45,416 - INFO - ========== Random Forest Training Completed ==========

@@ -1,0 +1,22 @@
+{
+  "crop": "Sugarcane",
+  "train_r2": 0.5848375565846449,
+  "test_r2": 0.34411652248468805,
+  "cv_r2": 0.3527532565597264,
+  "cv_train_r2": 0.6039959316042369,
+  "cv_gap": 0.25124267504451053,
+  "gap": 0.24072103409995682,
+  "rmse": 1.3648227472820318,
+  "mae": 1.0600000000000007,
+  "mape": 1.4223450933175117,
+  "best_params": {
+    "model__min_samples_split": 20,
+    "model__min_samples_leaf": 15,
+    "model__max_features": null,
+    "model__max_depth": 7,
+    "model__criterion": "absolute_error",
+    "model__ccp_alpha": 0.001
+  },
+  "selected_feature_count": 30,
+  "overfit_flag": true
+}
