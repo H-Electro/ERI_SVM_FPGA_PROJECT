@@ -167,27 +167,27 @@ for f in used_features:
     print(f)
 
 
-# # ------------------------------
-# #  Scatter plot: Actual vs Predicted
-# # ------------------------------
-# plt.figure(figsize=(8, 6))
-# sns.scatterplot(x=y_test, y=y_pred, color='blue', s=60)
-# plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', linewidth=2)  # diagonal line
-# plt.xlabel("Actual Crop Yield (ton/ha)")
-# plt.ylabel("Predicted Crop Yield (ton/ha)")
-# plt.title("Actual vs Predicted Crop Yield")
-# plt.grid(True)
-# plt.show()
+# ------------------------------
+#  Scatter plot: Actual vs Predicted
+# ------------------------------
+plt.figure(figsize=(8, 6))
+sns.scatterplot(x=y_test, y=y_pred, color='blue', s=60)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', linewidth=2)  # diagonal line
+plt.xlabel("Actual Crop Yield (ton/ha)")
+plt.ylabel("Predicted Crop Yield (ton/ha)")
+plt.title("Actual vs Predicted Crop Yield")
+plt.grid(True)
+plt.show()
 
-# # ------------------------------
-# # Optional: Residuals plot
-# # ------------------------------
-# residuals = y_test - y_pred
-# plt.figure(figsize=(8, 6))
-# sns.histplot(residuals, kde=True, color='green', bins=20)
-# plt.xlabel("Residuals (Actual - Predicted)")
-# plt.title("Residuals Distribution")
-# plt.show()
+# ------------------------------
+# Optional: Residuals plot
+# ------------------------------
+residuals = y_test - y_pred
+plt.figure(figsize=(8, 6))
+sns.histplot(residuals, kde=True, color='green', bins=20)
+plt.xlabel("Residuals (Actual - Predicted)")
+plt.title("Residuals Distribution")
+plt.show()
 
 # ------------------------------
 # Print Encoding Mechanism
@@ -265,3 +265,28 @@ with open(f"{model_dir}/decision_tree_python.py", "w") as f:
     f.write(python_tree_code)
 
 print("Pure Python tree logic generated and saved as decision_tree_python.py")
+
+# ------------------------------
+# Feature Importance Plot (Saved)
+# ------------------------------
+importances = tree_model.feature_importances_
+indices = np.argsort(importances)[::-1]
+feature_names = np.array(X.columns)
+
+plt.figure(figsize=(10, 6))
+sns.barplot(
+    x=importances[indices],
+    y=feature_names[indices],
+)
+
+plt.title("Feature Importance (Decision Tree)")
+plt.xlabel("Importance Score")
+plt.ylabel("Features")
+plt.tight_layout()
+
+# Save figure to output folder
+fig_path = os.path.join(model_dir, "feature_importance.png")
+plt.savefig(fig_path)
+plt.close()
+
+print(f"Feature importance plot saved to: {fig_path}")

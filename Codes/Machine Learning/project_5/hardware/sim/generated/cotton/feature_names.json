@@ -1,0 +1,20 @@
+[
+  "N",
+  "P",
+  "K",
+  "Soil_pH",
+  "Soil_Moisture",
+  "Soil_Type",
+  "Organic_Carbon",
+  "Temperature",
+  "Humidity",
+  "Rainfall",
+  "Sunlight_Hours",
+  "Wind_Speed",
+  "Region",
+  "Altitude",
+  "Season",
+  "Irrigation_Type",
+  "Fertilizer_Used",
+  "Pesticide_Used"
+]

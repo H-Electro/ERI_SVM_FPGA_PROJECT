@@ -1,0 +1,88 @@
+|--- num__Fertilizer_Used <= 238.98
+|   |--- num__Rainfall <= 1363.57
+|   |   |--- num__Fertilizer_Used <= 126.20
+|   |   |   |--- num__Soil_Moisture <= 37.14
+|   |   |   |   |--- num__Temperature <= 34.90
+|   |   |   |   |   |--- value: [22.06]
+|   |   |   |   |--- num__Temperature >  34.90
+|   |   |   |   |   |--- value: [23.10]
+|   |   |   |--- num__Soil_Moisture >  37.14
+|   |   |   |   |--- num__K <= 36.50
+|   |   |   |   |   |--- value: [22.29]
+|   |   |   |   |--- num__K >  36.50
+|   |   |   |   |   |--- value: [23.55]
+|   |   |--- num__Fertilizer_Used >  126.20
+|   |   |   |--- num__Soil_Moisture <= 28.99
+|   |   |   |   |--- num__Soil_pH <= 6.98
+|   |   |   |   |   |--- value: [23.72]
+|   |   |   |   |--- num__Soil_pH >  6.98
+|   |   |   |   |   |--- value: [22.84]
+|   |   |   |--- num__Soil_Moisture >  28.99
+|   |   |   |   |--- num__Soil_Moisture <= 57.09
+|   |   |   |   |   |--- value: [24.21]
+|   |   |   |   |--- num__Soil_Moisture >  57.09
+|   |   |   |   |   |--- value: [25.00]
+|   |--- num__Rainfall >  1363.57
+|   |   |--- num__Soil_Moisture <= 45.66
+|   |   |   |--- num__Rainfall <= 2071.17
+|   |   |   |   |--- num__Wind_Speed <= 13.28
+|   |   |   |   |   |--- value: [24.45]
+|   |   |   |   |--- num__Wind_Speed >  13.28
+|   |   |   |   |   |--- value: [23.76]
+|   |   |   |--- num__Rainfall >  2071.17
+|   |   |   |   |--- num__Fertilizer_Used <= 128.44
+|   |   |   |   |   |--- value: [24.55]
+|   |   |   |   |--- num__Fertilizer_Used >  128.44
+|   |   |   |   |   |--- value: [25.43]
+|   |   |--- num__Soil_Moisture >  45.66
+|   |   |   |--- num__Fertilizer_Used <= 110.58
+|   |   |   |   |--- num__Rainfall <= 2233.91
+|   |   |   |   |   |--- value: [24.13]
+|   |   |   |   |--- num__Rainfall >  2233.91
+|   |   |   |   |   |--- value: [25.54]
+|   |   |   |--- num__Fertilizer_Used >  110.58
+|   |   |   |   |--- num__Rainfall <= 2468.39
+|   |   |   |   |   |--- value: [25.67]
+|   |   |   |   |--- num__Rainfall >  2468.39
+|   |   |   |   |   |--- value: [26.66]
+|--- num__Fertilizer_Used >  238.98
+|   |--- num__Rainfall <= 1455.18
+|   |   |--- num__Soil_Moisture <= 24.40
+|   |   |   |--- num__Rainfall <= 1099.55
+|   |   |   |   |--- num__Wind_Speed <= 14.83
+|   |   |   |   |   |--- value: [24.25]
+|   |   |   |   |--- num__Wind_Speed >  14.83
+|   |   |   |   |   |--- value: [23.16]
+|   |   |   |--- num__Rainfall >  1099.55
+|   |   |   |   |--- value: [25.04]
+|   |   |--- num__Soil_Moisture >  24.40
+|   |   |   |--- num__N <= 167.50
+|   |   |   |   |--- num__K <= 83.00
+|   |   |   |   |   |--- value: [24.79]
+|   |   |   |   |--- num__K >  83.00
+|   |   |   |   |   |--- value: [25.47]
+|   |   |   |--- num__N >  167.50
+|   |   |   |   |--- value: [26.50]
+|   |--- num__Rainfall >  1455.18
+|   |   |--- num__Soil_Moisture <= 39.78
+|   |   |   |--- num__Wind_Speed <= 12.48
+|   |   |   |   |--- num__Fertilizer_Used <= 276.71
+|   |   |   |   |   |--- value: [25.63]
+|   |   |   |   |--- num__Fertilizer_Used >  276.71
+|   |   |   |   |   |--- value: [26.59]
+|   |   |   |--- num__Wind_Speed >  12.48
+|   |   |   |   |--- num__Rainfall <= 2379.83
+|   |   |   |   |   |--- value: [24.95]
+|   |   |   |   |--- num__Rainfall >  2379.83
+|   |   |   |   |   |--- value: [26.25]
+|   |   |--- num__Soil_Moisture >  39.78
+|   |   |   |--- num__Soil_pH <= 5.63
+|   |   |   |   |--- num__Pesticide_Used <= 18.62
+|   |   |   |   |   |--- value: [25.74]
+|   |   |   |   |--- num__Pesticide_Used >  18.62
+|   |   |   |   |   |--- value: [26.66]
+|   |   |   |--- num__Soil_pH >  5.63
+|   |   |   |   |--- num__Rainfall <= 2020.11
+|   |   |   |   |   |--- value: [26.82]
+|   |   |   |   |--- num__Rainfall >  2020.11
+|   |   |   |   |   |--- value: [27.65]

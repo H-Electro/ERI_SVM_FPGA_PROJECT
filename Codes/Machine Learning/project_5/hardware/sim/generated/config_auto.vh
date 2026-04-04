@@ -1,0 +1,10 @@
+`define RF_NUM_CROPS 6
+`define RF_CROP_SEL_W 3
+`define RF_TOTAL_TREES 96
+`define RF_TOTAL_NODES 19178
+`define RF_TOTAL_TESTS 10000
+`define RF_NUM_FEATURES 18
+`define RF_DATA_W 32
+`define RF_NODE_W 128
+`define RF_FRAC_BITS 16
+`define RF_SCALE 65536

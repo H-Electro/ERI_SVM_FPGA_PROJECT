@@ -1,0 +1,19 @@
+2026-04-04 18:05:52,891 - INFO - Tuning decision tree for Cotton
+2026-04-04 18:06:14,900 - INFO - Cotton base metrics: train_r2=0.6241 test_r2=0.3616 cv_r2=0.4013 gap=0.2625
+2026-04-04 18:06:14,902 - INFO - Cotton kept all encoded features (30 total)
+2026-04-04 18:06:16,322 - INFO - Tuning decision tree for Maize
+2026-04-04 18:06:38,648 - INFO - Maize base metrics: train_r2=0.6008 test_r2=0.4122 cv_r2=0.3962 gap=0.1886
+2026-04-04 18:06:38,650 - INFO - Maize kept all encoded features (30 total)
+2026-04-04 18:06:40,168 - INFO - Tuning decision tree for Potato
+2026-04-04 18:07:02,651 - INFO - Potato base metrics: train_r2=0.5578 test_r2=0.4245 cv_r2=0.3647 gap=0.1333
+2026-04-04 18:07:02,653 - INFO - Potato kept all encoded features (30 total)
+2026-04-04 18:07:04,068 - INFO - Tuning decision tree for Rice
+2026-04-04 18:07:25,962 - INFO - Rice base metrics: train_r2=0.6619 test_r2=0.3895 cv_r2=0.3675 gap=0.2724
+2026-04-04 18:07:25,965 - INFO - Rice kept all encoded features (30 total)
+2026-04-04 18:07:27,278 - INFO - Tuning decision tree for Sugarcane
+2026-04-04 18:07:49,254 - INFO - Sugarcane base metrics: train_r2=0.5848 test_r2=0.3441 cv_r2=0.3528 gap=0.2407
+2026-04-04 18:07:49,258 - INFO - Sugarcane kept all encoded features (30 total)
+2026-04-04 18:07:50,659 - INFO - Tuning decision tree for Wheat
+2026-04-04 18:08:12,288 - INFO - Wheat base metrics: train_r2=0.5516 test_r2=0.4493 cv_r2=0.3498 gap=0.1022
+2026-04-04 18:08:12,290 - INFO - Wheat kept all encoded features (30 total)
+2026-04-04 18:08:13,871 - INFO - Best crop by test R2: Wheat (test_r2=0.4493, cv_r2=0.3498, gap=0.1022)

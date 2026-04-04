@@ -1,0 +1,113 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Apr  4 01:36:57 2026
+# Process ID: 21928
+# Current directory: d:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT
+# Command line: vivado.exe -mode gui -source d:\PC\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Co-Design\System Design\run.tcl
+# Log file: d:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/vivado.log
+# Journal file: d:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT\vivado.jou
+# Running On: DESKTOP-E5A1AIP, OS: Windows, CPU Frequency: 2611 MHz, CPU Physical cores: 10, Host memory: 8126 MB
+#-----------------------------------------------------------
+start_gui
+source {d:\PC\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Co-Design\System Design\run.tcl}
+# set project_path [file normalize [file join [file dirname [info script]] "system_design.xpr"]]
+# set bd_path [file normalize [file join [file dirname [info script]] "system_design.srcs" "sources_1" "bd" "system_design" "system_design.bd"]]
+# puts "Opening project: $project_path"
+Opening project: D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.xpr
+# open_project $project_path
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vek280_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vek280/es/1.0/board.xml as part xcve2802-vsvh1760-2lp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vhk158_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vhk158/es/1.0/board.xml as part xcvh1582-vsva3697-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es:part0:1.2 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120/es/1.2/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk120_es_revb:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk120_revb/es/1.0/board.xml as part xcvp1202-vsva2785-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vpk180_es:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/vpk180/es/1.0/board.xml as part xcvp1802-lsvc4072-2mp-e-s-es1 specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu208ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu208ld/production/2.0/board.xml as part xczu58dr-fsvg1517-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:2.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/2.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670ld:part0:1.0 available at C:/Xilinx/Vivado/2022.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670ld/1.0/board.xml as part xczu57dr-fsve1156-2-i specified in board_part file is either invalid or not available
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2022.2/data/ip'.
+open_project: Time (s): cpu = 00:00:45 ; elapsed = 00:00:20 . Memory (MB): peak = 1738.465 ; gain = 338.469
+# puts "Current project:"
+Current project:
+# puts [current_project]
+system_design
+# puts "Block designs:"
+Block designs:
+# puts [get_bd_designs]
+
+# if {[file exists $bd_path]} {
+#     puts "Opening block design: $bd_path"
+#     open_bd_design $bd_path
+# 
+#     puts "BD cells:"
+#     foreach cell [get_bd_cells] {
+#         puts "  $cell"
+#     }
+# 
+#     puts "BD interface nets:"
+#     foreach net [get_bd_intf_nets] {
+#         puts "  $net"
+#     }
+# 
+#     puts "BD scalar nets:"
+#     foreach net [get_bd_nets] {
+#         puts "  $net"
+#     }
+# } else {
+#     puts "Block design not found at: $bd_path"
+# }
+Opening block design: D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.srcs/sources_1/bd/system_design/system_design.bd
+Reading block design file <D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.srcs/sources_1/bd/system_design/system_design.bd>...
+Adding component instance block -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
+Adding component instance block -- xilinx.com:ip:axi_dma:7.1 - axi_dma_0
+WARNING: [BD 41-1282] Ignoring parameter HAS_BURST
+WARNING: [BD 41-1281] Parameter HAS_BURST is not defined on /axi_dma_0/M_AXIS_MM2S. Setting parameter on /axi_dma_0/M_AXIS_MM2S failed
+Adding component instance block -- xilinx.com:ip:axi_uartlite:2.0 - axi_uartlite_0
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - ps7_0_axi_periph
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Adding component instance block -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_100M
+Adding component instance block -- xilinx.com:ip:axi_interconnect:2.1 - axi_mem_intercon
+Adding component instance block -- xilinx.com:ip:axi_crossbar:2.1 - xbar
+Successfully read diagram <system_design> from block design file <D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.srcs/sources_1/bd/system_design/system_design.bd>
+open_bd_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:09 . Memory (MB): peak = 1878.180 ; gain = 115.059
+BD cells:
+  /axi_dma_0
+  /axi_mem_intercon
+  /axi_uartlite_0
+  /processing_system7_0
+  /ps7_0_axi_periph
+  /rst_ps7_0_100M
+BD interface nets:
+  /axi_dma_0_M_AXI_MM2S
+  /axi_dma_0_M_AXI_S2MM
+  /axi_mem_intercon_M00_AXI
+  /axi_uartlite_0_UART
+  /processing_system7_0_DDR
+  /processing_system7_0_FIXED_IO
+  /processing_system7_0_M_AXI_GP0
+  /ps7_0_axi_periph_M00_AXI
+  /ps7_0_axi_periph_M01_AXI
+BD scalar nets:
+  /processing_system7_0_FCLK_CLK0
+  /processing_system7_0_FCLK_RESET0_N
+  /rst_ps7_0_100M_peripheral_aresetn
+# puts "Vivado GUI will remain open after this script finishes."
+Vivado GUI will remain open after this script finishes.
+update_compile_order -fileset sources_1
+startgroup
+delete_bd_objs [get_bd_intf_nets axi_dma_0_M_AXI_MM2S] [get_bd_intf_nets axi_dma_0_M_AXI_S2MM] [get_bd_intf_nets axi_mem_intercon_M00_AXI] [get_bd_intf_nets processing_system7_0_M_AXI_GP0] [get_bd_intf_nets ps7_0_axi_periph_M01_AXI] [get_bd_intf_nets processing_system7_0_FIXED_IO] [get_bd_intf_nets axi_uartlite_0_UART] [get_bd_intf_nets ps7_0_axi_periph_M00_AXI] [get_bd_intf_nets processing_system7_0_DDR]
+delete_bd_objs [get_bd_nets processing_system7_0_FCLK_RESET0_N] [get_bd_nets rst_ps7_0_100M_peripheral_aresetn] [get_bd_nets processing_system7_0_FCLK_CLK0]
+delete_bd_objs [get_bd_cells axi_mem_intercon] [get_bd_cells ps7_0_axi_periph]
+delete_bd_objs [get_bd_cells processing_system7_0] [get_bd_cells axi_dma_0] [get_bd_cells rst_ps7_0_100M] [get_bd_cells axi_uartlite_0]
+delete_bd_objs [get_bd_intf_ports uart_rtl] [get_bd_intf_ports DDR] [get_bd_intf_ports FIXED_IO]
+endgroup
+save_bd_design
+Wrote  : <D:\PC\Shared Folder\Uni\courses\ERI\github\ERI_SVM_FPGA_PROJECT\Codes\Co-Design\System Design\system_design.srcs\sources_1\bd\system_design\system_design.bd> 
+Wrote  : <D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.srcs/sources_1/bd/system_design/ui/bd_7f01d80e.ui> 
+exit
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 01:42:33 2026...

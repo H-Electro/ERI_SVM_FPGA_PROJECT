@@ -211,9 +211,7 @@ for crop in all_crops:
     # ------------------------------
     epsilon = 1e-8
     mape = np.mean(np.abs((y_test - y_pred) / (y_test + epsilon))) * 100
-    accuracy = 100 - mape
     print(f"MAPE: {mape:.2f}%")
-    print(f"Accuracy: {accuracy:.2f}%")
 
     # ------------------------------
     # Feature Importance Plot (SAVE)

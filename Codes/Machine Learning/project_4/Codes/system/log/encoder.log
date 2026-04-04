@@ -1,0 +1,66 @@
+2026-04-04 18:24:00,114 - INFO - ==================================================
+2026-04-04 18:24:00,115 - INFO - Crop: Maize
+2026-04-04 18:24:00,115 - INFO - ==================================================
+2026-04-04 18:24:00,116 - INFO - Column: Soil_Type
+2026-04-04 18:24:00,116 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:00,117 - INFO - Column: Region
+2026-04-04 18:24:00,117 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:00,118 - INFO - Column: Season
+2026-04-04 18:24:00,118 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:00,120 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:00,120 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
+2026-04-04 18:24:01,577 - INFO - ==================================================
+2026-04-04 18:24:01,577 - INFO - Crop: Potato
+2026-04-04 18:24:01,577 - INFO - ==================================================
+2026-04-04 18:24:01,578 - INFO - Column: Soil_Type
+2026-04-04 18:24:01,578 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:01,580 - INFO - Column: Region
+2026-04-04 18:24:01,580 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:01,581 - INFO - Column: Season
+2026-04-04 18:24:01,582 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:01,582 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:01,583 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
+2026-04-04 18:24:02,939 - INFO - ==================================================
+2026-04-04 18:24:02,939 - INFO - Crop: Rice
+2026-04-04 18:24:02,939 - INFO - ==================================================
+2026-04-04 18:24:02,940 - INFO - Column: Soil_Type
+2026-04-04 18:24:02,940 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:02,941 - INFO - Column: Region
+2026-04-04 18:24:02,941 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:02,942 - INFO - Column: Season
+2026-04-04 18:24:02,942 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:02,942 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:02,943 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
+2026-04-04 18:24:04,226 - INFO - ==================================================
+2026-04-04 18:24:04,226 - INFO - Crop: Sugarcane
+2026-04-04 18:24:04,226 - INFO - ==================================================
+2026-04-04 18:24:04,228 - INFO - Column: Soil_Type
+2026-04-04 18:24:04,228 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:04,229 - INFO - Column: Region
+2026-04-04 18:24:04,229 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:04,231 - INFO - Column: Season
+2026-04-04 18:24:04,231 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:04,232 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:04,232 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
+2026-04-04 18:24:05,571 - INFO - ==================================================
+2026-04-04 18:24:05,571 - INFO - Crop: Wheat
+2026-04-04 18:24:05,571 - INFO - ==================================================
+2026-04-04 18:24:05,572 - INFO - Column: Soil_Type
+2026-04-04 18:24:05,572 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:05,573 - INFO - Column: Region
+2026-04-04 18:24:05,573 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:05,574 - INFO - Column: Season
+2026-04-04 18:24:05,574 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:05,575 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:05,575 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
+2026-04-04 18:24:06,908 - INFO - ==================================================
+2026-04-04 18:24:06,908 - INFO - Crop: Cotton
+2026-04-04 18:24:06,908 - INFO - ==================================================
+2026-04-04 18:24:06,909 - INFO - Column: Soil_Type
+2026-04-04 18:24:06,909 - INFO - Mapping: {'Clay': 0, 'Loamy': 1, 'Sandy': 2, 'Silt': 3}
+2026-04-04 18:24:06,910 - INFO - Column: Region
+2026-04-04 18:24:06,910 - INFO - Mapping: {'Central': 0, 'East': 1, 'North': 2, 'South': 3, 'West': 4}
+2026-04-04 18:24:06,911 - INFO - Column: Season
+2026-04-04 18:24:06,911 - INFO - Mapping: {'Kharif': 0, 'Rabi': 1, 'Zaid': 2}
+2026-04-04 18:24:06,912 - INFO - Column: Irrigation_Type
+2026-04-04 18:24:06,912 - INFO - Mapping: {'Canal': 0, 'Drip': 1, 'Rainfed': 2, 'Sprinkler': 3}
