@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/All/Ali/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.ip_user_files/bd/design_1/ip/design_1_rst_ps7_0_100M_0/sim/design_1_rst_ps7_0_100M_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_rst_ps7_0_100M_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/All/Ali/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.ip_user_files/bd/design_1/ip/design_1_axi_uartlite_0_0/sim/design_1_axi_uartlite_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_axi_uartlite_0_0'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/All/Ali/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/System Design/system_design.ip_user_files/bd/design_1/ip/design_1_axi_dma_0_0/sim/design_1_axi_dma_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'design_1_axi_dma_0_0'
