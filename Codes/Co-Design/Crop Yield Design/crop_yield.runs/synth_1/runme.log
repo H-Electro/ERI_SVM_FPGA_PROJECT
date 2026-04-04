@@ -1,0 +1,254 @@
+
+*** Running vivado
+    with args -log random_forest_seq.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source random_forest_seq.tcl
+
+
+
+****** Vivado v2022.2 (64-bit)
+  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source random_forest_seq.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1003.910 ; gain = 119.902
+Command: synth_design -top random_forest_seq -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28368
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [C:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1440.957 ; gain = 412.219
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'random_forest_seq' [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:4]
+INFO: [Synth 8-3876] $readmem data file 'forest_nodes.mem' is read successfully [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:50]
+INFO: [Synth 8-3876] $readmem data file 'tree_bases.mem' is read successfully [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:51]
+INFO: [Synth 8-3876] $readmem data file 'crop_tree_offsets.mem' is read successfully [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:52]
+INFO: [Synth 8-3876] $readmem data file 'crop_tree_counts.mem' is read successfully [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'random_forest_seq' (0#1) [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:4]
+WARNING: [Synth 8-6014] Unused sequential element active_crop_type_reg was removed.  [D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Machine Learning/project_5/hardware/rtl/random_forest_seq.v:87]
+WARNING: [Synth 8-7137] Register feature_store_reg in module random_forest_seq has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'feature_store_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "feature_store_reg" dissolved into registers
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1556.816 ; gain = 528.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1556.816 ; gain = 528.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 1556.816 ; gain = 528.078
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'random_forest_seq'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_RECV |                              000 |                              000
+             S_LOAD_TREE |                              001 |                              001
+             S_READ_NODE |                              010 |                              010
+             S_EVAL_NODE |                              011 |                              011
+             S_NEXT_TREE |                              100 |                              100
+                S_OUTPUT |                              101 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'random_forest_seq'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1565.625 ; gain = 536.887
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   64 Bit       Adders := 1     
+	   2 Input   16 Bit       Adders := 1     
+	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 1     
++---Registers : 
+	              128 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 19    
+	               16 Bit    Registers := 3     
+	               15 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input   64 Bit        Muxes := 1     
+	   6 Input   32 Bit        Muxes := 1     
+	   7 Input   16 Bit        Muxes := 2     
+	   2 Input   16 Bit        Muxes := 1     
+	   6 Input   16 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 19    
+	   6 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+Why this net has no driver: _order_recur <const0>
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------------+---------------+---------------+----------------+
+|Module Name       | RTL Object    | Depth x Width | Implemented As | 
++------------------+---------------+---------------+----------------+
+|random_forest_seq | tree_base_mem | 128x16        | LUT            | 
+|random_forest_seq | forest_mem    | 32768x128     | LUT            | 
+|random_forest_seq | p_0_out       | 128x16        | LUT            | 
++------------------+---------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:40 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:43 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:48 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   246|
+|3     |LUT1   |    62|
+|4     |LUT2   |   820|
+|5     |LUT3   |   132|
+|6     |LUT4   |    92|
+|7     |LUT5   |   463|
+|8     |LUT6   | 25652|
+|9     |MUXF7  | 12046|
+|10    |MUXF8  |  1475|
+|11    |FDCE   |   314|
+|12    |FDRE   |   576|
+|13    |IBUF   |    39|
+|14    |OBUF   |    34|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       | 41952|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1878.793 ; gain = 850.055
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1878.793 ; gain = 850.055
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:49 . Memory (MB): peak = 1878.793 ; gain = 850.055
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.443 . Memory (MB): peak = 1888.883 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 13767 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'random_forest_seq' is not ideal for floorplanning, since the cellview 'random_forest_seq' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2008.871 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 7cf1a0d7
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 5 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:47 ; elapsed = 00:01:07 . Memory (MB): peak = 2008.871 ; gain = 1004.961
+INFO: [Common 17-1381] The checkpoint 'D:/PC/Shared Folder/Uni/courses/ERI/github/ERI_SVM_FPGA_PROJECT/Codes/Co-Design/Crop Yield Design/crop_yield.runs/synth_1/random_forest_seq.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file random_forest_seq_utilization_synth.rpt -pb random_forest_seq_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  4 22:49:01 2026...

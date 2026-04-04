@@ -1,5 +1,14 @@
 `timescale 1ns / 1ps
-`include "generated/config_auto.vh"
+`define RF_NUM_CROPS 6
+`define RF_CROP_SEL_W 3
+`define RF_TOTAL_TREES 96
+`define RF_TOTAL_NODES 19178
+`define RF_TOTAL_TESTS 10000
+`define RF_NUM_FEATURES 18
+`define RF_DATA_W 32
+`define RF_NODE_W 128
+`define RF_FRAC_BITS 16
+`define RF_SCALE 65536
 
 module random_forest_seq #(
     parameter NUM_FEATURES = `RF_NUM_FEATURES,
@@ -47,10 +56,10 @@ module random_forest_seq #(
     integer init_idx;
 
     initial begin
-        $readmemh("generated/forest_nodes.mem", forest_mem);
-        $readmemh("generated/tree_bases.mem", tree_base_mem);
-        $readmemh("generated/crop_tree_offsets.mem", crop_tree_offset_mem);
-        $readmemh("generated/crop_tree_counts.mem", crop_tree_count_mem);
+        $readmemh("forest_nodes.mem", forest_mem);
+        $readmemh("tree_bases.mem", tree_base_mem);
+        $readmemh("crop_tree_offsets.mem", crop_tree_offset_mem);
+        $readmemh("crop_tree_counts.mem", crop_tree_count_mem);
         for (init_idx = 0; init_idx < NUM_FEATURES; init_idx = init_idx + 1)
             feature_store[init_idx] = {DATA_W{1'b0}};
     end

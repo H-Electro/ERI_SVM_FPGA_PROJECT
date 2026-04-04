@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../Machine Learning/project_5/hardware/rtl/random_forest_seq.v" \
+
+sv xil_defaultlib  \
+"../../../../../../Machine Learning/project_5/hardware/tb/tb_random_forest_seq.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

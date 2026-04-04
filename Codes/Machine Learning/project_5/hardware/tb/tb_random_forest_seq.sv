@@ -1,5 +1,14 @@
 `timescale 1ns / 1ps
-`include "generated/config_auto.vh"
+`define RF_NUM_CROPS 6
+`define RF_CROP_SEL_W 3
+`define RF_TOTAL_TREES 96
+`define RF_TOTAL_NODES 19178
+`define RF_TOTAL_TESTS 10000
+`define RF_NUM_FEATURES 18
+`define RF_DATA_W 32
+`define RF_NODE_W 128
+`define RF_FRAC_BITS 16
+`define RF_SCALE 65536
 
 module tb_random_forest_seq;
 
@@ -54,10 +63,10 @@ module tb_random_forest_seq;
     end
 
     initial begin
-        $readmemh("generated/tb_features.mem", feature_mem);
-        $readmemh("generated/tb_expected.mem", expected_mem);
-        $readmemh("generated/crop_sample_offsets.mem", crop_sample_offset_mem);
-        $readmemh("generated/crop_sample_counts.mem", crop_sample_count_mem);
+        $readmemh("tb_features.mem", feature_mem);
+        $readmemh("tb_expected.mem", expected_mem);
+        $readmemh("crop_sample_offsets.mem", crop_sample_offset_mem);
+        $readmemh("crop_sample_counts.mem", crop_sample_count_mem);
     end
 
     task automatic send_sample;
