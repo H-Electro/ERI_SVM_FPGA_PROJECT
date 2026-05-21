@@ -12,10 +12,14 @@ module random_forest_seq #(
 )(
     input  wire                         axi_clk,
     input  wire                         axi_reset_n,
+    
+    //Edit the crop type!
     input  wire [CROP_SEL_W-1:0]        crop_type,
+
     input  wire                         s_axis_valid,
     input  wire [DATA_W-1:0]            s_axis_data,
     output wire                         s_axis_ready,
+
     output reg                          m_axis_valid,
     output reg  [DATA_W-1:0]            m_axis_data,
     input  wire                         m_axis_ready

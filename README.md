@@ -25,48 +25,6 @@ Study how machine learning can support FPGA/ASIC development by:
 * applying hardware/software co-design techniques
 
 ---
-
-# Problem Statement
-
-Machine learning is widely used in software systems, but integration with hardware design flows is still developing.
-
-This research studies a workflow where:
-
-1. ML models are trained in Python.
-2. Decision rules are extracted and converted into Verilog modules.
-3. The hardware implementation is verified using SystemVerilog UVM.
-
-This enables predictive algorithms to run as hardware accelerators in FPGA/ASIC systems.
-
-### System Design
-
-<p align="center">
-  <img src="Docs/Assets/SystemDesign.png" alt="System Design" width="900">
-</p>
-
-# AMBA APB4 Integration
-
-The APB4 design used in this project is based on this repository:
-
-[https://github.com/MohamedHussein27/AMPA_APB4_Protocol](https://github.com/MohamedHussein27/AMPA_APB4_Protocol)
-
-In this repo, that APB4 design is integrated with the existing crop yield predictor so the predictor can be accessed through an APB4-based interface.
-
-APB4 allows:
-
-* writing input feature values
-* triggering prediction computation
-* storing prediction results
-* reading results from registers or memory
-
-### Proposed Architecture
-
-<p align="center">
-  <img src="Docs/Assets/arch.png" alt="Hardware/Software Co-Design Architecture" width="441">
-</p>
-
----
-
 # Dataset Overview
 
 Dataset: Smart Farming Sensor Data for Yield Prediction
@@ -96,40 +54,6 @@ The dataset contains environmental variables affecting crop growth and is used t
 # Machine Learning Tools and Libraries
 
 The ML pipeline is implemented in Python using `pandas` for preprocessing and `numpy` for numerical operations. A Decision Tree model from `scikit-learn` (sklearn) is also used for training and prediction.
-
----
-
-# Hardware Design Approach
-
-Models used:
-
-* Decision Tree Regressor
-* Random Forest
-
-Design flow:
-
-1. Train ML models in Python.
-2. Extract decision rules.
-3. Convert rules into Verilog hardware modules.
-4. Implement the design on FPGA.
-
-Decision nodes are mapped to comparators, control logic, and arithmetic operations to build a hardware inference engine.
-
-### Example Decision Tree Output
-
-<p align="center">
-  <img src="Docs/Assets/tree.png" alt="Decision Tree Output" width="900">
-</p>
-
----
-
-# Verification Methodology
-
-<p align="center">
-  <img src="Docs/Assets/uvm.png" alt="UVM Verification Architecture" width="430">
-</p>
-
-The hardware design is verified using a SystemVerilog UVM environment. The current setup uses 1 active agent and 2 passive agents to check that hardware predictions stay aligned with the software reference.
 
 ---
 

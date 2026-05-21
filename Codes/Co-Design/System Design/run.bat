@@ -2,12 +2,11 @@
 setlocal
 
 set "SCRIPT_DIR=%~dp0"
-set "VIVADO_BAT=D:\AMD\Vivado\2022.2\bin\vivado.bat"
+set "VIVADO_BAT=C:\Xilinx\Vivado\2022.2\bin\vivado.bat"
 set "TCL_FILE=%SCRIPT_DIR%run.tcl"
 set "VIVADO_WORK_DIR=%SCRIPT_DIR%.vivado_runtime"
 set "VIVADO_LOG=%VIVADO_WORK_DIR%\vivado.log"
 set "VIVADO_JOU=%VIVADO_WORK_DIR%\vivado.jou"
-
 if not exist "%VIVADO_BAT%" (
     echo Vivado launcher not found:
     echo   %VIVADO_BAT%
